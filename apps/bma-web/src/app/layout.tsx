@@ -36,12 +36,27 @@ export const metadata: Metadata = {
   },
 }
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Blue Modern Advisory",
+  alternateName: "BMA",
+  url: "https://bluemodernadvisory.com",
+  email: "team@bluemodernadvisory.com",
+  description: "GTM Strategy & Engineering for enterprise and growth companies. Autonomous prospecting engines built by operators from Clay and McKinsey.",
+}
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${dmSans.variable} ${dmMono.variable}`}>
       <body className="bg-white text-ink antialiased font-sans">
+        <a href="#main-content" className="skip-nav">Skip to main content</a>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <Nav />
-        <main className="pt-[60px]">{children}</main>
+        <main id="main-content" className="pt-[60px]">{children}</main>
         <Footer />
       </body>
     </html>

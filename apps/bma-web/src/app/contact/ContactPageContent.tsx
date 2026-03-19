@@ -219,12 +219,13 @@ export function ContactPageContent() {
                       </div>
 
                       {error && (
-                        <p className="text-red-600 text-xs">{error}</p>
+                        <p role="alert" className="text-red-600 text-xs">{error}</p>
                       )}
 
                       <button
                         type="submit"
                         disabled={submitting}
+                        aria-busy={submitting}
                         className="w-full py-3.5 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition-colors text-sm disabled:opacity-60 disabled:cursor-not-allowed"
                       >
                         {submitting ? "Sending..." : "Send Message"}

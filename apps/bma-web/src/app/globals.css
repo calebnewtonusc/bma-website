@@ -28,10 +28,40 @@
   ::-webkit-scrollbar { width: 5px; }
   ::-webkit-scrollbar-track { background: #F9FAFB; }
   ::-webkit-scrollbar-thumb { background: #D1D5DB; border-radius: 9999px; }
+
+  :focus-visible {
+    outline: 2px solid #2563EB;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
 }
 
 @layer utilities {
   .text-balance { text-wrap: balance; }
+
+  .skip-nav {
+    position: absolute;
+    left: -9999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+  .skip-nav:focus {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: auto;
+    height: auto;
+    padding: 12px 20px;
+    background: #1D4ED8;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    z-index: 9999;
+    border-radius: 0 0 8px 0;
+    outline: none;
+  }
 
   .gradient-text {
     background: linear-gradient(135deg, #1D4ED8, #60A5FA);

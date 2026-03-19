@@ -136,7 +136,7 @@ export function TogariPageContent() {
       </section>
 
       {/* Capabilities */}
-      <section id="capabilities" className="py-24 bg-off-white section-divider">
+      <section id="capabilities" className="py-24 bg-off-white section-divider scroll-mt-16">
         <div className="max-w-6xl mx-auto px-6 lg:px-10">
           <div className="text-center mb-12">
             <p className="text-sm font-semibold text-blue-600 tracking-widest uppercase mb-3">Platform Capabilities</p>

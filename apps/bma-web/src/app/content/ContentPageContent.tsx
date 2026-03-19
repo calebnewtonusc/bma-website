@@ -124,6 +124,8 @@ export function ContentPageContent() {
               {typeOptions.map((t) => (
                 <button
                   key={t}
+                  type="button"
+                  aria-pressed={selectedType === t}
                   onClick={() => setSelectedType(t)}
                   className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors ${
                     selectedType === t
@@ -140,6 +142,8 @@ export function ContentPageContent() {
               {industryOptions.map((i) => (
                 <button
                   key={i}
+                  type="button"
+                  aria-pressed={selectedIndustry === i}
                   onClick={() => setSelectedIndustry(i)}
                   className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors ${
                     selectedIndustry === i
@@ -187,13 +191,13 @@ export function ContentPageContent() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {rest.map((item, i) => (
-              <motion.div
+              <motion.article
                 key={item.title}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.06 }}
-                className="group p-6 rounded-xl bg-white border border-gray-200 hover:shadow-card-hover transition-shadow duration-300"
+                className="p-6 rounded-xl bg-white border border-gray-200"
               >
                 <div className="flex items-center gap-2 mb-3">
                   <span className="text-[12px] font-medium text-blue-700 bg-blue-pale border border-blue-mid px-2.5 py-1 rounded-full">
@@ -201,10 +205,13 @@ export function ContentPageContent() {
                   </span>
                   <span className="text-xs text-muted ml-auto">{item.readTime} read</span>
                 </div>
-                <h3 className="text-navy font-semibold text-base mb-2 leading-snug group-hover:text-blue-600 transition-colors">{item.title}</h3>
+                <h3 className="text-navy font-semibold text-base mb-2 leading-snug">{item.title}</h3>
                 <p className="text-muted text-sm leading-relaxed line-clamp-3">{item.description}</p>
-                <div className="mt-4 text-xs text-muted">{item.date}</div>
-              </motion.div>
+                <div className="mt-4 flex items-center justify-between">
+                  <span className="text-xs text-muted">{item.date}</span>
+                  <span className="text-xs text-muted bg-off-white border border-gray-200 px-2 py-0.5 rounded">Coming Soon</span>
+                </div>
+              </motion.article>
             ))}
           </div>
         </div>

@@ -101,7 +101,7 @@ export function Nav() {
               </Link>
             ))}
             <div className="pt-3 border-t border-gray-100 mt-3">
-              <Link href="/contact" className="block text-center py-2.5 text-[15px] font-semibold text-white bg-blue-600 rounded-lg">
+              <Link href="/contact" className="block text-center py-2.5 text-[15px] font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors">
                 Book a Call
               </Link>
             </div>

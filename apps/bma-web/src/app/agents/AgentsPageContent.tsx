@@ -125,6 +125,9 @@ export function AgentsPageContent() {
             {agents.map((agent, i) => (
               <motion.button
                 key={agent.id}
+                type="button"
+                aria-pressed={selectedAgent === agent.id}
+                aria-expanded={selectedAgent === agent.id}
                 onClick={() => setSelectedAgent(selectedAgent === agent.id ? null : agent.id)}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
