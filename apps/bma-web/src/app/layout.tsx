@@ -19,6 +19,7 @@ const dmMono = DM_Mono({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://bluemodernadvisory.com"),
   title: { default: "Blue Modern Advisory | GTM Strategy & Engineering", template: "%s | Blue Modern Advisory" },
   description: "BMA builds autonomous prospecting engines for enterprise, PE, and healthcare. GTM Strategy & Engineering led by operators from Clay and McKinsey.",
   robots: { index: true, follow: true },
@@ -53,7 +54,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <a href="#main-content" className="skip-nav">Skip to main content</a>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }}
         />
         <Nav />
         <main id="main-content" className="pt-[60px]">{children}</main>

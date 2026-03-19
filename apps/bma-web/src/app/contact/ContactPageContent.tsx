@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 
 type FormType = "enterprise" | "togari" | "coaching"
@@ -29,6 +29,17 @@ export function ContactPageContent() {
   const [submitting, setSubmitting] = useState(false)
   const [submitted, setSubmitted] = useState(false)
   const [error, setError] = useState<string | null>(null)
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search)
+    const typeParam = params.get("type") as FormType | null
+    const programParam = params.get("program")
+    if (typeParam && (["enterprise", "togari", "coaching"] as string[]).includes(typeParam)) {
+      setActiveTab(typeParam)
+    } else if (programParam) {
+      setActiveTab("coaching")
+    }
+  }, [])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()

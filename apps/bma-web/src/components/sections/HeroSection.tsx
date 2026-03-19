@@ -41,11 +41,12 @@ export function HeroSection() {
             product, service, or capital
             <br />
             through{" "}
+            <span className="sr-only">{phrases[idx]}.</span>
           </h1>
+          {/* Visually animated — purely decorative, hidden from screen readers */}
           <div
             className="overflow-hidden"
-            aria-live="polite"
-            aria-atomic="true"
+            aria-hidden="true"
             onMouseEnter={() => setPaused(true)}
             onMouseLeave={() => setPaused(false)}
           >

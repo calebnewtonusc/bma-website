@@ -18,6 +18,25 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
     }
 
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(body.email)) {
+      return NextResponse.json({ error: "Invalid email address" }, { status: 400 });
+    }
+
+    if (
+      body.name.length > 200 ||
+      body.email.length > 254 ||
+      body.company.length > 200 ||
+      body.message.length > 5000
+    ) {
+      return NextResponse.json({ error: "Input exceeds maximum length" }, { status: 400 });
+    }
+
+    const validTypes = ["enterprise", "togari", "coaching"];
+    if (!validTypes.includes(body.type)) {
+      return NextResponse.json({ error: "Invalid inquiry type" }, { status: 400 });
+    }
+
     // Slack notification (env-gated)
     const slackUrl = process.env.SLACK_WEBHOOK_URL;
     if (slackUrl) {
