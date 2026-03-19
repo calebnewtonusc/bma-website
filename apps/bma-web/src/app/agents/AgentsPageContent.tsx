@@ -159,7 +159,7 @@ export function AgentsPageContent() {
           <motion.section
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 20 }}
+            exit={{ opacity: 0, y: -20 }}
             className="py-8 bg-white section-divider"
           >
             <div className="max-w-6xl mx-auto px-6 lg:px-10">

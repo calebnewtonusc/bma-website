@@ -13,7 +13,7 @@ export function CaseStudyDetail({ cs }: { cs: CaseStudy }) {
         <div className="max-w-6xl mx-auto px-6 lg:px-10">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
             <Link href="/case-studies" className="inline-flex items-center gap-2 text-muted hover:text-ink text-sm mb-8 transition-colors">
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
               </svg>
               All Case Studies
@@ -41,7 +41,7 @@ export function CaseStudyDetail({ cs }: { cs: CaseStudy }) {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {cs.results.map((r) => (
               <div key={r.metric} className="text-center">
-                <div className="text-3xl font-bold text-navy mb-1">{r.value}</div>
+                <div className="text-3xl font-bold font-mono text-navy mb-1">{r.value}</div>
                 <div className="text-blue-600 text-xs font-semibold uppercase tracking-wider mb-1">{r.metric}</div>
                 <div className="text-muted text-xs">{r.description}</div>
               </div>
@@ -77,7 +77,7 @@ export function CaseStudyDetail({ cs }: { cs: CaseStudy }) {
             </div>
 
             {/* Sidebar */}
-            <div className="space-y-6">
+            <aside aria-label="Engagement details" className="space-y-6">
               <div className="p-6 rounded-xl bg-off-white border border-gray-200">
                 <h3 className="text-navy font-semibold text-sm mb-4">Engagement Details</h3>
                 <dl className="space-y-3">
@@ -116,7 +116,7 @@ export function CaseStudyDetail({ cs }: { cs: CaseStudy }) {
                   Start a Conversation
                 </Link>
               </div>
-            </div>
+            </aside>
           </div>
         </div>
       </section>

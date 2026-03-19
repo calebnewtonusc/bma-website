@@ -114,7 +114,7 @@ export function CoachingPageContent() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className={`relative p-8 rounded-2xl border ${
+                className={`relative overflow-visible p-8 rounded-2xl border ${
                   program.highlighted
                     ? "bg-blue-pale border-blue-mid"
                     : "bg-white border-gray-200"
@@ -182,11 +182,13 @@ export function CoachingPageContent() {
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 className="p-7 rounded-xl bg-white border border-gray-200 hover:shadow-card-hover transition-shadow duration-300"
               >
-                <p className="text-ink text-sm leading-relaxed mb-5 italic">&ldquo;{t.quote}&rdquo;</p>
-                <div>
-                  <div className="text-navy font-semibold text-sm">{t.author}</div>
-                  <div className="text-muted text-xs">{t.company}</div>
-                </div>
+                <blockquote className="text-ink text-sm leading-relaxed mb-5 italic">
+                &ldquo;{t.quote}&rdquo;
+              </blockquote>
+              <cite className="not-italic">
+                <div className="text-navy font-semibold text-sm">{t.author}</div>
+                <div className="text-muted text-xs">{t.company}</div>
+              </cite>
               </motion.div>
             ))}
           </div>

@@ -16,8 +16,8 @@ export function CTASection() {
           <h2 className="text-display font-bold text-white tracking-[-0.025em] mb-6">
             Start with a free 30-minute call.
           </h2>
-          <p className="text-lead text-white/50 mb-10 max-w-prose">
-            Book a free 15-minute call. No commitment. We&apos;ll assess your current GTM setup
+          <p className="text-lead text-white/50 mb-10 max-w-2xl">
+            Book a free 30-minute call. No commitment. We&apos;ll assess your current GTM setup
             and tell you exactly where the leverage is.
           </p>
           <div className="flex flex-wrap gap-4 items-center">

@@ -131,10 +131,12 @@ export function ContactPageContent() {
                     <form onSubmit={handleSubmit} className="space-y-4">
                       <div className="grid grid-cols-2 gap-4">
                         <div>
-                          <label className="block text-xs font-medium text-muted mb-1.5">Name *</label>
+                          <label htmlFor="contact-name" className="block text-xs font-medium text-muted mb-1.5">Name *</label>
                           <input
+                            id="contact-name"
                             type="text"
                             required
+                            autoComplete="name"
                             value={formData.name}
                             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                             className="w-full px-3 py-2.5 bg-white border border-gray-200 rounded-lg text-ink text-sm placeholder-gray-400 focus:outline-none focus:border-blue-400 transition-colors"
@@ -142,10 +144,12 @@ export function ContactPageContent() {
                           />
                         </div>
                         <div>
-                          <label className="block text-xs font-medium text-muted mb-1.5">Work Email *</label>
+                          <label htmlFor="contact-email" className="block text-xs font-medium text-muted mb-1.5">Work Email *</label>
                           <input
+                            id="contact-email"
                             type="email"
                             required
+                            autoComplete="email"
                             value={formData.email}
                             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                             className="w-full px-3 py-2.5 bg-white border border-gray-200 rounded-lg text-ink text-sm placeholder-gray-400 focus:outline-none focus:border-blue-400 transition-colors"
@@ -156,10 +160,12 @@ export function ContactPageContent() {
 
                       <div className="grid grid-cols-2 gap-4">
                         <div>
-                          <label className="block text-xs font-medium text-muted mb-1.5">Company *</label>
+                          <label htmlFor="contact-company" className="block text-xs font-medium text-muted mb-1.5">Company *</label>
                           <input
+                            id="contact-company"
                             type="text"
                             required
+                            autoComplete="organization"
                             value={formData.company}
                             onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                             className="w-full px-3 py-2.5 bg-white border border-gray-200 rounded-lg text-ink text-sm placeholder-gray-400 focus:outline-none focus:border-blue-400 transition-colors"
@@ -167,10 +173,12 @@ export function ContactPageContent() {
                           />
                         </div>
                         <div>
-                          <label className="block text-xs font-medium text-muted mb-1.5">Role *</label>
+                          <label htmlFor="contact-role" className="block text-xs font-medium text-muted mb-1.5">Role *</label>
                           <input
+                            id="contact-role"
                             type="text"
                             required
+                            autoComplete="organization-title"
                             value={formData.role}
                             onChange={(e) => setFormData({ ...formData, role: e.target.value })}
                             className="w-full px-3 py-2.5 bg-white border border-gray-200 rounded-lg text-ink text-sm placeholder-gray-400 focus:outline-none focus:border-blue-400 transition-colors"
@@ -181,8 +189,9 @@ export function ContactPageContent() {
 
                       {activeTab === "coaching" && (
                         <div>
-                          <label className="block text-xs font-medium text-muted mb-1.5">Stage</label>
+                          <label htmlFor="contact-stage" className="block text-xs font-medium text-muted mb-1.5">Stage</label>
                           <select
+                            id="contact-stage"
                             value={formData.stage}
                             onChange={(e) => setFormData({ ...formData, stage: e.target.value })}
                             className="w-full px-3 py-2.5 bg-white border border-gray-200 rounded-lg text-ink text-sm focus:outline-none focus:border-blue-400 transition-colors"
@@ -197,8 +206,9 @@ export function ContactPageContent() {
                       )}
 
                       <div>
-                        <label className="block text-xs font-medium text-muted mb-1.5">Tell us about your challenge *</label>
+                        <label htmlFor="contact-message" className="block text-xs font-medium text-muted mb-1.5">Tell us about your challenge *</label>
                         <textarea
+                          id="contact-message"
                           required
                           value={formData.message}
                           onChange={(e) => setFormData({ ...formData, message: e.target.value })}

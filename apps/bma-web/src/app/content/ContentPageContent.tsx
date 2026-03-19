@@ -119,8 +119,8 @@ export function ContentPageContent() {
       <section className="py-8 bg-off-white border-b border-gray-200">
         <div className="max-w-6xl mx-auto px-6 lg:px-10">
           <div className="flex flex-wrap gap-6 items-center">
-            <div className="flex gap-2 flex-wrap">
-              <span className="text-muted text-sm mr-1 self-center">Type:</span>
+            <div role="group" aria-label="Filter by content type" className="flex gap-2 flex-wrap items-center">
+              <span className="text-muted text-sm mr-1" aria-hidden="true">Type:</span>
               {typeOptions.map((t) => (
                 <button
                   key={t}
@@ -135,8 +135,8 @@ export function ContentPageContent() {
                 </button>
               ))}
             </div>
-            <div className="flex gap-2 flex-wrap">
-              <span className="text-muted text-sm mr-1 self-center">Industry:</span>
+            <div role="group" aria-label="Filter by industry" className="flex gap-2 flex-wrap items-center">
+              <span className="text-muted text-sm mr-1" aria-hidden="true">Industry:</span>
               {industryOptions.map((i) => (
                 <button
                   key={i}
