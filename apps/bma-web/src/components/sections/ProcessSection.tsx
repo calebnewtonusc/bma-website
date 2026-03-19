@@ -14,7 +14,6 @@ const steps = [
       "Operating model analysis",
       "Structured GTM playbook",
     ],
-    color: "blue",
   },
   {
     number: "02",
@@ -27,7 +26,6 @@ const steps = [
       "Real-time lead detection",
       "Ownership & dedup routing",
     ],
-    color: "indigo",
   },
   {
     number: "03",
@@ -40,33 +38,8 @@ const steps = [
       "Steady-state experimentation",
       "Precision at volume",
     ],
-    color: "violet",
   },
 ];
-
-const colorConfig = {
-  blue: {
-    badge: "bg-blue-700 text-white",
-    icon: "text-blue-700 bg-blue-50 border-blue-100",
-    dot: "bg-blue-700",
-    label: "text-blue-700",
-    border: "border-blue-200",
-  },
-  indigo: {
-    badge: "bg-blue-800 text-white",
-    icon: "text-blue-800 bg-blue-50 border-blue-100",
-    dot: "bg-blue-800",
-    label: "text-blue-800",
-    border: "border-blue-200",
-  },
-  violet: {
-    badge: "bg-navy-900 text-white",
-    icon: "text-navy-900 bg-gray-100 border-gray-200",
-    dot: "bg-navy-900",
-    label: "text-navy-900",
-    border: "border-gray-200",
-  },
-};
 
 export function ProcessSection() {
   return (
@@ -89,47 +62,48 @@ export function ProcessSection() {
           </p>
         </div>
 
-        {/* Steps */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {steps.map((step, i) => {
-            const colors = colorConfig[step.color as keyof typeof colorConfig];
-            return (
-              <motion.div
-                key={step.number}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.55, delay: i * 0.12 }}
-                className={`relative p-8 bg-white rounded-2xl border ${colors.border} shadow-card hover:shadow-card-hover transition-all duration-200`}
-              >
-                {/* Connector line on desktop */}
-                {i < steps.length - 1 && (
-                  <div className="hidden lg:block absolute -right-4 top-12 w-8 h-px bg-gray-200 z-10" />
-                )}
-
-                {/* Number badge */}
-                <div className={`inline-flex items-center justify-center w-9 h-9 rounded-lg text-sm font-bold mb-6 ${colors.badge}`}>
+        {/* Timeline steps */}
+        <div className="divide-y divide-gray-100">
+          {steps.map((step, i) => (
+            <motion.div
+              key={step.number}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.55, delay: i * 0.12 }}
+              className="grid grid-cols-1 lg:grid-cols-12 gap-8 py-16"
+            >
+              {/* Large display number */}
+              <div className="lg:col-span-2 flex items-start">
+                <span className="text-[6rem] font-extrabold text-gray-100 leading-none font-display select-none">
                   {step.number}
-                </div>
+                </span>
+              </div>
 
-                <h3 className="font-display font-bold text-navy-900 text-xl mb-3 tracking-tight">
+              {/* Title */}
+              <div className="lg:col-span-3 flex flex-col justify-center">
+                <h3 className="font-display font-bold text-navy-900 text-2xl tracking-tight mb-2">
                   {step.title}
                 </h3>
-                <p className="text-gray-500 text-sm leading-relaxed mb-6">
-                  {step.description}
-                </p>
+                <div className="w-8 h-0.5 bg-blue-700 rounded" />
+              </div>
 
-                <div className="space-y-2.5">
+              {/* Description + highlights */}
+              <div className="lg:col-span-7">
+                <p className="text-gray-500 leading-relaxed mb-6">{step.description}</p>
+                <div className="flex flex-wrap gap-2">
                   {step.highlights.map((h) => (
-                    <div key={h} className="flex items-center gap-3 text-sm text-gray-700">
-                      <div className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${colors.dot}`} />
+                    <span
+                      key={h}
+                      className="px-3 py-1.5 bg-blue-50 border border-blue-100 text-blue-700 text-xs font-medium rounded-full"
+                    >
                       {h}
-                    </div>
+                    </span>
                   ))}
                 </div>
-              </motion.div>
-            );
-          })}
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

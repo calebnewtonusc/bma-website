@@ -16,128 +16,120 @@ function AnimatedFlowDiagram() {
       <motion.div
         animate={{ y: [0, -8, 0] }}
         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-        className="relative"
+        className="relative flex flex-col items-center gap-0 w-64"
       >
-        <svg width="420" height="360" viewBox="0 0 420 360" fill="none" xmlns="http://www.w3.org/2000/svg">
-          {/* Connection lines */}
-          <motion.path
-            d="M100 100 L210 180"
-            stroke="#1D4ED8" strokeWidth="1.5" strokeDasharray="4 4"
-            initial={{ pathLength: 0, opacity: 0 }}
-            animate={{ pathLength: 1, opacity: 0.3 }}
-            transition={{ duration: 2, repeat: Infinity, repeatType: "loop", ease: "linear" }}
-          />
-          <motion.path
-            d="M320 100 L210 180"
-            stroke="#1D4ED8" strokeWidth="1.5" strokeDasharray="4 4"
-            initial={{ pathLength: 0, opacity: 0 }}
-            animate={{ pathLength: 1, opacity: 0.3 }}
-            transition={{ duration: 2, delay: 0.5, repeat: Infinity, repeatType: "loop", ease: "linear" }}
-          />
-          <motion.path
-            d="M210 180 L100 265"
-            stroke="#1D4ED8" strokeWidth="1.5" strokeDasharray="4 4"
-            initial={{ pathLength: 0, opacity: 0 }}
-            animate={{ pathLength: 1, opacity: 0.3 }}
-            transition={{ duration: 2, delay: 1, repeat: Infinity, repeatType: "loop", ease: "linear" }}
-          />
-          <motion.path
-            d="M210 180 L320 265"
-            stroke="#1D4ED8" strokeWidth="1.5" strokeDasharray="4 4"
-            initial={{ pathLength: 0, opacity: 0 }}
-            animate={{ pathLength: 1, opacity: 0.3 }}
-            transition={{ duration: 2, delay: 1.5, repeat: Infinity, repeatType: "loop", ease: "linear" }}
-          />
-          <motion.path
-            d="M100 100 L320 100"
-            stroke="#E5E7EB" strokeWidth="1" opacity="0.6"
-          />
-          <motion.path
-            d="M100 265 L320 265"
-            stroke="#E5E7EB" strokeWidth="1" opacity="0.6"
-          />
+        {/* Top node — ICP + Signals */}
+        <motion.div
+          initial={{ opacity: 0, y: -12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2, duration: 0.5 }}
+          className="w-full rounded-xl border border-gray-200 bg-white shadow-card px-5 py-4"
+        >
+          <div className="flex items-center gap-3">
+            <div className="w-8 h-8 rounded-lg bg-blue-50 border border-blue-100 flex items-center justify-center flex-shrink-0">
+              <svg className="w-4 h-4 text-blue-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+            </div>
+            <div>
+              <div className="text-navy-900 text-sm font-bold">ICP + Signals</div>
+              <div className="text-gray-400 text-xs">Firmographic &amp; intent</div>
+            </div>
+          </div>
+        </motion.div>
 
-          {/* Top left node - ICP Data */}
-          <motion.g
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.2 }}
-          >
-            <rect x="40" y="72" width="120" height="56" rx="10" fill="white" stroke="#E5E7EB" strokeWidth="1.5"/>
-            <rect x="40" y="72" width="120" height="56" rx="10" fill="#EFF6FF" opacity="0.6"/>
-            <circle cx="64" cy="100" r="8" fill="#DBEAFE"/>
-            <circle cx="64" cy="100" r="4" fill="#1D4ED8"/>
-            <text x="80" y="96" fill="#0A1628" fontSize="10" fontWeight="600" fontFamily="system-ui">ICP Data</text>
-            <text x="80" y="110" fill="#6B7280" fontSize="9" fontFamily="system-ui">Firmographic</text>
-          </motion.g>
+        {/* Arrow */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.45, duration: 0.4 }}
+          className="flex flex-col items-center py-1"
+        >
+          <motion.div
+            animate={{ scaleY: [0, 1], opacity: [0, 1] }}
+            transition={{ duration: 0.8, delay: 0.5, repeat: Infinity, repeatDelay: 3 }}
+            className="w-px h-8 bg-gradient-to-b from-blue-200 to-blue-700"
+          />
+          <svg className="text-blue-700 -mt-0.5" width="10" height="6" viewBox="0 0 10 6" fill="currentColor">
+            <path d="M5 6L0 0h10L5 6z" />
+          </svg>
+        </motion.div>
 
-          {/* Top right node - Signal Detection */}
-          <motion.g
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.4 }}
-          >
-            <rect x="260" y="72" width="120" height="56" rx="10" fill="white" stroke="#E5E7EB" strokeWidth="1.5"/>
-            <rect x="260" y="72" width="120" height="56" rx="10" fill="#EFF6FF" opacity="0.6"/>
-            <circle cx="284" cy="100" r="8" fill="#DBEAFE"/>
-            <circle cx="284" cy="100" r="4" fill="#2563eb"/>
-            <text x="300" y="96" fill="#0A1628" fontSize="10" fontWeight="600" fontFamily="system-ui">Signals</text>
-            <text x="300" y="110" fill="#6B7280" fontSize="9" fontFamily="system-ui">Intent + Hiring</text>
-          </motion.g>
+        {/* Center node — Clay Engine */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.6, duration: 0.5 }}
+          className="w-full rounded-xl bg-blue-700 px-5 py-4 shadow-cta-blue relative overflow-hidden"
+        >
+          <motion.div
+            className="absolute inset-0 rounded-xl"
+            animate={{ opacity: [0, 0.15, 0] }}
+            transition={{ duration: 2.5, repeat: Infinity }}
+            style={{ background: "radial-gradient(ellipse at 50% 50%, rgba(255,255,255,0.3), transparent)" }}
+          />
+          <div className="flex items-center gap-3 relative">
+            <div className="w-8 h-8 rounded-lg bg-white/15 flex items-center justify-center flex-shrink-0">
+              <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <div>
+              <div className="text-white text-sm font-bold">Clay Engine</div>
+              <div className="text-blue-200 text-xs">AI-powered enrichment</div>
+            </div>
+          </div>
+        </motion.div>
 
-          {/* Center node - BMA Engine */}
-          <motion.g
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.6 }}
-          >
-            <rect x="140" y="148" width="140" height="64" rx="12" fill="#1D4ED8"/>
-            <rect x="140" y="148" width="140" height="64" rx="12" fill="url(#blueGrad)" opacity="0.9"/>
-            <text x="210" y="175" fill="white" fontSize="11" fontWeight="700" fontFamily="system-ui" textAnchor="middle">BMA Engine</text>
-            <text x="210" y="191" fill="#BFDBFE" fontSize="9" fontFamily="system-ui" textAnchor="middle">Clay Infrastructure</text>
-            <motion.circle
-              cx="210" cy="182" r="24"
-              stroke="rgba(255,255,255,0.15)" strokeWidth="1"
-              fill="none"
-              animate={{ scale: [1, 1.2, 1], opacity: [0.5, 0, 0.5] }}
-              transition={{ duration: 2.5, repeat: Infinity }}
-            />
-          </motion.g>
+        {/* Arrow */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.8, duration: 0.4 }}
+          className="flex flex-col items-center py-1"
+        >
+          <motion.div
+            animate={{ scaleY: [0, 1], opacity: [0, 1] }}
+            transition={{ duration: 0.8, delay: 1.2, repeat: Infinity, repeatDelay: 3 }}
+            className="w-px h-8 bg-gradient-to-b from-blue-700 to-blue-200"
+          />
+          <svg className="text-blue-700 -mt-0.5" width="10" height="6" viewBox="0 0 10 6" fill="currentColor">
+            <path d="M5 6L0 0h10L5 6z" />
+          </svg>
+        </motion.div>
 
-          {/* Bottom left node - Enrichment */}
-          <motion.g
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.8 }}
-          >
-            <rect x="40" y="237" width="120" height="56" rx="10" fill="white" stroke="#E5E7EB" strokeWidth="1.5"/>
-            <circle cx="64" cy="265" r="8" fill="#DBEAFE"/>
-            <circle cx="64" cy="265" r="4" fill="#1D4ED8"/>
-            <text x="80" y="261" fill="#0A1628" fontSize="10" fontWeight="600" fontFamily="system-ui">Enrichment</text>
-            <text x="80" y="275" fill="#6B7280" fontSize="9" fontFamily="system-ui">200+ fields</text>
-          </motion.g>
-
-          {/* Bottom right node - Outbound */}
-          <motion.g
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 1 }}
-          >
-            <rect x="260" y="237" width="120" height="56" rx="10" fill="white" stroke="#E5E7EB" strokeWidth="1.5"/>
-            <circle cx="284" cy="265" r="8" fill="#DBEAFE"/>
-            <circle cx="284" cy="265" r="4" fill="#1D4ED8"/>
-            <text x="300" y="261" fill="#0A1628" fontSize="10" fontWeight="600" fontFamily="system-ui">Outbound</text>
-            <text x="300" y="275" fill="#6B7280" fontSize="9" fontFamily="system-ui">Multi-channel</text>
-          </motion.g>
-
-          {/* Gradient def */}
-          <defs>
-            <linearGradient id="blueGrad" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stopColor="#1D4ED8"/>
-              <stop offset="100%" stopColor="#2563eb"/>
-            </linearGradient>
-          </defs>
-        </svg>
+        {/* Bottom node — Pipeline */}
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1, duration: 0.5 }}
+          className="w-full rounded-xl border border-gray-200 bg-white shadow-card px-5 py-4"
+        >
+          <div className="flex items-center gap-3 mb-3">
+            <div className="w-8 h-8 rounded-lg bg-blue-50 border border-blue-100 flex items-center justify-center flex-shrink-0">
+              <svg className="w-4 h-4 text-blue-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+              </svg>
+            </div>
+            <div>
+              <div className="text-navy-900 text-sm font-bold">Pipeline</div>
+              <div className="text-gray-400 text-xs">Live &amp; growing</div>
+            </div>
+          </div>
+          {/* Bar chart */}
+          <div className="flex items-end gap-1 h-8">
+            {[30, 50, 42, 65, 55, 80, 72].map((h, i) => (
+              <motion.div
+                key={i}
+                initial={{ scaleY: 0 }}
+                animate={{ scaleY: 1 }}
+                transition={{ delay: 1.2 + i * 0.08, duration: 0.4, ease: "easeOut" }}
+                style={{ height: `${h}%`, transformOrigin: "bottom" }}
+                className={`flex-1 rounded-sm ${i === 6 ? "bg-blue-700" : "bg-blue-200"}`}
+              />
+            ))}
+          </div>
+        </motion.div>
       </motion.div>
     </div>
   );
@@ -156,7 +148,7 @@ export function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-white">
       {/* Subtle mesh background */}
-      <div className="absolute inset-0 bg-light-grid bg-grid-md opacity-100" />
+      <div className="absolute inset-0 bg-light-grid opacity-100" />
       <div
         className="absolute inset-0"
         style={{
@@ -176,12 +168,8 @@ export function HeroSection() {
               transition={{ duration: 0.5 }}
               className="inline-flex items-center gap-2 px-3.5 py-1.5 mb-8 rounded-full bg-blue-50 border border-blue-100"
             >
-              <div className="flex -space-x-1">
-                {["M", "K", "P"].map((l) => (
-                  <div key={l} className="w-5 h-5 rounded-full bg-blue-700 border-2 border-white flex items-center justify-center">
-                    <span className="text-white text-[8px] font-bold">{l}</span>
-                  </div>
-                ))}
+              <div className="flex items-center gap-0.5 text-amber-400 text-sm leading-none">
+                {"★★★★★"}
               </div>
               <span className="text-blue-700 text-xs font-semibold">
                 Recommended by 150+ MBB Consultants &amp; M7 MBAs
@@ -195,13 +183,13 @@ export function HeroSection() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="font-display text-[3.5rem] md:text-[4.25rem] lg:text-[5rem] font-extrabold text-navy-900 leading-[1.05] tracking-[-0.03em] mb-4"
             >
-              Go-To-Market with
+              Go-To-Market with your product,
               <br />
-              your product through
+              service, or capital through
             </motion.h1>
 
             {/* Animated cycling phrase */}
-            <div className="h-[72px] md:h-[80px] lg:h-[88px] mb-6 overflow-hidden">
+            <div className="overflow-hidden pb-2 mb-6">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={phraseIndex}
@@ -243,7 +231,7 @@ export function HeroSection() {
                 Book a Free Call
               </Link>
               <Link
-                href="/gtm"
+                href="/case-studies"
                 className="px-7 py-3.5 bg-white hover:bg-gray-50 text-navy-900 font-semibold rounded-lg border border-gray-200 hover:border-gray-300 transition-all duration-200 text-base"
               >
                 See Our Work

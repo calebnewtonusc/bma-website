@@ -74,7 +74,7 @@ export function CTASection() {
           <div className="flex flex-wrap justify-center gap-4">
             <Link
               href="/contact"
-              className="px-8 py-4 bg-blue-700 hover:bg-blue-600 text-white font-semibold rounded-xl transition-all duration-200 text-base shadow-cta"
+              className="px-8 py-4 bg-blue-700 hover:bg-blue-600 text-white font-semibold rounded-xl transition-all duration-200 text-base shadow-cta-blue"
             >
               Book a Free 15-Min Call
             </Link>

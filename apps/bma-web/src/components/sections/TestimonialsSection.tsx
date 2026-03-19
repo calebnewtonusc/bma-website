@@ -48,17 +48,11 @@ export function TestimonialsSection() {
       <div className="relative max-w-content mx-auto px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-14">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 mb-5">
-            <div className="w-1.5 h-1.5 rounded-full bg-blue-700" />
-            <span className="text-blue-700 text-xs font-semibold uppercase tracking-widest">
-              Client Results
-            </span>
-          </div>
           <h2 className="font-display text-display-md font-extrabold text-navy-900 tracking-tight mb-4">
             What our clients say
           </h2>
           <p className="text-gray-500 text-lg max-w-xl mx-auto">
-            Recommended by 150+ MBB Consultants &amp; M7 MBAs
+            What our clients achieved
           </p>
         </div>
 
@@ -74,14 +68,14 @@ export function TestimonialsSection() {
               className="bg-white rounded-2xl border border-gray-200 p-8 shadow-card hover:shadow-card-hover transition-all duration-200"
             >
               {/* Quote mark */}
-              <div className="text-blue-200 mb-5">
-                <svg width="28" height="22" viewBox="0 0 28 22" fill="currentColor">
-                  <path d="M0 22V13.273C0 5.697 4.424 1.212 13.273 0l1.09 1.636c-2.667.727-4.788 2.06-6.364 4-1.515 1.878-2.272 4.121-2.272 6.728H12V22H0zm16 0V13.273C16 5.697 20.424 1.212 29.273 0l1.09 1.636c-2.667.727-4.788 2.06-6.364 4-1.515 1.878-2.272 4.121-2.272 6.728H28V22H16z" />
+              <div className="text-blue-300 mb-5">
+                <svg width="32" height="24" viewBox="0 0 32 24" fill="currentColor">
+                  <path d="M0 24V14.182C0 6.212 4.424 1.333 13.273 0l1.09 1.818c-2.667.848-4.788 2.242-6.364 4.182C6.484 8.03 5.727 10.364 5.727 13H12V24H0zm18 0V14.182C18 6.212 22.424 1.333 31.273 0L32.36 1.818c-2.667.848-4.788 2.242-6.364 4.182-1.515 2.03-2.272 4.364-2.272 7H30V24H18z"/>
                 </svg>
               </div>
 
               {/* Quote text */}
-              <p className="text-gray-700 text-[15px] leading-relaxed mb-6">
+              <p className="text-gray-700 text-base leading-relaxed mb-6">
                 {t.quote}
               </p>
 

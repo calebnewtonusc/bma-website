@@ -34,9 +34,6 @@ export function Footer() {
               A GTM Strategy &amp; Engineering firm that transforms how companies leverage data
               and large language models to convert ideal prospects and drive revenue growth.
             </p>
-            <p className="text-white/40 text-xs mb-6">
-              Recommended by 150+ MBB Consultants &amp; M7 MBAs
-            </p>
             <div className="flex items-center gap-4">
               <a
                 href="https://linkedin.com/company/blue-modern-advisory"
@@ -50,7 +47,7 @@ export function Footer() {
                 </svg>
               </a>
               <a
-                href="mailto:team@bluemodernai.com"
+                href="mailto:contact@bluemodernadvisory.com"
                 className="text-white/40 hover:text-white transition-colors"
                 aria-label="Email"
               >
@@ -83,18 +80,10 @@ export function Footer() {
           ))}
         </div>
 
-        <div className="mt-12 pt-8 border-t border-white/[0.08] flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="mt-12 pt-8 border-t border-white/[0.08]">
           <p className="text-white/40 text-sm">
             &copy; 2026 Blue Modern AI LLC. All rights reserved.
           </p>
-          <div className="flex items-center gap-6">
-            <Link href="/privacy" className="text-white/40 hover:text-white/70 text-sm transition-colors">
-              Privacy Policy
-            </Link>
-            <Link href="/terms" className="text-white/40 hover:text-white/70 text-sm transition-colors">
-              Terms of Service
-            </Link>
-          </div>
         </div>
       </div>
     </footer>

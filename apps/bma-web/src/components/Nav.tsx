@@ -40,10 +40,10 @@ export function Nav() {
         <div className="flex items-center justify-between h-16">
           {/* Logo wordmark */}
           <Link href="/" className="flex items-center gap-0 group">
-            <span className="font-display font-700 text-[15px] tracking-tight text-navy-900 leading-none">
+            <span className="font-display font-bold text-[15px] tracking-tight text-navy-900 leading-none">
               Blue Modern
             </span>
-            <span className="font-display font-500 text-[15px] tracking-tight text-blue-700 leading-none ml-1">
+            <span className="font-display font-medium text-[15px] tracking-tight text-blue-700 leading-none ml-1">
               Advisory
             </span>
           </Link>
@@ -58,7 +58,7 @@ export function Nav() {
                   href={link.href}
                   className={`px-3.5 py-2 rounded-md text-sm font-medium transition-all duration-150 ${
                     isActive
-                      ? "text-blue-700 bg-blue-50"
+                      ? "text-blue-700 font-semibold"
                       : "text-gray-600 hover:text-navy-900 hover:bg-gray-50"
                   }`}
                 >

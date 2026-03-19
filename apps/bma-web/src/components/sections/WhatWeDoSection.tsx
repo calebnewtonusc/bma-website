@@ -95,8 +95,7 @@ export function WhatWeDoSection() {
               Everything you need to build a revenue engine
             </h2>
             <p className="text-gray-500 text-base leading-relaxed max-w-sm lg:text-right">
-              We are Blue Modern Advisory, a GTM Strategy &amp; Engineering firm that
-              transforms how companies leverage data and large language models.
+              From data diagnostic to live campaigns, every engagement is engineered for pipeline impact.
             </p>
           </div>
         </div>
@@ -126,7 +125,7 @@ export function WhatWeDoSection() {
                 {service.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="px-2.5 py-1 bg-gray-100 text-gray-500 text-[11px] font-medium rounded-full"
+                    className="px-2.5 py-1 bg-gray-100 text-gray-500 text-xs font-medium rounded-full"
                   >
                     {tag}
                   </span>

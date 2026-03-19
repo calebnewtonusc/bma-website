@@ -64,11 +64,6 @@ const config: Config = {
         "light-grid": "linear-gradient(rgba(29,78,216,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(29,78,216,0.04) 1px, transparent 1px)",
         "glow-blue": "radial-gradient(ellipse 80% 50% at 50% 0%, rgba(37,99,235,0.15), transparent)",
       },
-      backgroundSize: {
-        "grid-sm": "40px 40px",
-        "grid-md": "60px 60px",
-        "grid-lg": "80px 80px",
-      },
       animation: {
         "fade-up": "fadeUp 0.6s ease-out forwards",
         "fade-in": "fadeIn 0.5s ease-out forwards",
