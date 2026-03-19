@@ -1,0 +1,20 @@
+{
+  "id": "sequence-writer",
+  "name": "SequenceWriter",
+  "tagline": "Human quality, agent speed",
+  "category": "Sequencing",
+  "status": "Production",
+  "description": "Generates personalized multi-channel sequences that read like they were written by a senior SDR with deep account knowledge.",
+  "capabilities": [
+    "Multi-channel orchestration (email, LinkedIn, phone)",
+    "Account-specific personalization from enriched data",
+    "Industry and persona tone calibration",
+    "A/B variant generation and statistical testing",
+    "Reply-rate optimization through continuous learning"
+  ],
+  "metrics": {
+    "avg_reply_rate": "4.2x industry avg",
+    "variants": "Unlimited",
+    "channels": "4"
+  }
+}

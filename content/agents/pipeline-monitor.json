@@ -1,0 +1,20 @@
+{
+  "id": "pipeline-monitor",
+  "name": "PipelineMonitor",
+  "tagline": "Never miss a signal",
+  "category": "Pipeline",
+  "status": "Production",
+  "description": "Continuously monitors your open pipeline for signals that predict deal movement.",
+  "capabilities": [
+    "Champion job change detection with alert routing",
+    "Funding and M&A signal monitoring for open deals",
+    "Competitive intelligence alerts at account level",
+    "Stale pipeline identification and re-engagement",
+    "Deal health scoring with predictive risk flags"
+  ],
+  "metrics": {
+    "signals_monitored": "180+",
+    "avg_alert_time": "< 4 hours",
+    "pipeline_recovery": "18%"
+  }
+}

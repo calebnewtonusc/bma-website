@@ -1,0 +1,20 @@
+{
+  "id": "prospect-finder",
+  "name": "ProspectFinder",
+  "tagline": "Autonomous account discovery",
+  "category": "Prospecting",
+  "status": "Production",
+  "description": "ProspectFinder operates continuously across 40+ data sources to surface net-new accounts that match your ICP.",
+  "capabilities": [
+    "Real-time ICP matching against live firmographic data",
+    "Technographic stack identification and scoring",
+    "Job posting analysis for buying intent signals",
+    "Funding event monitoring and trigger alerts",
+    "Lookalike expansion from your best existing customers"
+  ],
+  "metrics": {
+    "accuracy": "94%",
+    "daily_accounts": "500+",
+    "signal_types": "40+"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "id": "enrichment-engine",
+  "name": "EnrichmentEngine",
+  "tagline": "200+ fields, zero manual work",
+  "category": "Enrichment",
+  "status": "Production",
+  "description": "Takes a list of company names or domains and returns fully enriched account profiles in minutes.",
+  "capabilities": [
+    "200+ firmographic and technographic fields",
+    "Executive contact discovery and validation",
+    "LinkedIn activity and job change monitoring",
+    "Technology stack mapping with confidence scores",
+    "Revenue estimate modeling from signals"
+  ],
+  "metrics": {
+    "fields": "200+",
+    "accuracy": "97%",
+    "speed": "< 2 min/account"
+  }
+}
