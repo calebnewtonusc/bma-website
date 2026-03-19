@@ -43,7 +43,7 @@ export function ContactPageContent() {
       if (!res.ok) throw new Error("Submission failed")
       setSubmitted(true)
     } catch {
-      setError("Something went wrong. Please email us directly at team@bluemodernadviosry.com")
+      setError("Something went wrong. Please email us directly at team@bluemodernadvisory.com")
     } finally {
       setSubmitting(false)
     }
@@ -67,7 +67,7 @@ export function ContactPageContent() {
 
               <div className="space-y-4 mb-12">
                 {[
-                  { label: "Email", value: "team@bluemodernadviosry.com" },
+                  { label: "Email", value: "team@bluemodernadvisory.com" },
                   { label: "Response time", value: "Within 24 hours" },
                   { label: "First call", value: "30 minutes, no obligation" },
                 ].map((item) => (

@@ -4,11 +4,12 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 
 const links = [
-  { label: "GTM Strategy", href: "/gtm" },
-  { label: "Agents",       href: "/agents" },
-  { label: "Togari",       href: "/togari" },
-  { label: "Coaching",     href: "/coaching" },
-  { label: "About",        href: "/about" },
+  { label: "GTM Strategy",  href: "/gtm" },
+  { label: "Agents",        href: "/agents" },
+  { label: "Togari",        href: "/togari" },
+  { label: "Coaching",      href: "/coaching" },
+  { label: "Case Studies",  href: "/case-studies" },
+  { label: "About",         href: "/about" },
 ]
 
 export function Nav() {

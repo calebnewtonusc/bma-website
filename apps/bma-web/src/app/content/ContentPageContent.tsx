@@ -175,12 +175,9 @@ export function ContentPageContent() {
               </div>
               <h2 className="text-title font-bold text-navy tracking-tight mb-3">{featured.title}</h2>
               <p className="text-muted leading-relaxed mb-5">{featured.description}</p>
-              <button className="inline-flex items-center gap-2 text-blue-600 font-semibold text-sm hover:text-blue-700 transition-colors">
-                Read full article
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </button>
+              <span className="inline-flex items-center gap-2 text-[13px] font-medium text-muted bg-white border border-gray-200 px-3 py-1.5 rounded-lg">
+                Full article coming soon
+              </span>
             </motion.div>
           )}
 
@@ -192,7 +189,7 @@ export function ContentPageContent() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.06 }}
-                className="group p-6 rounded-xl bg-white border border-gray-200 hover:shadow-card-hover cursor-pointer transition-shadow duration-300"
+                className="group p-6 rounded-xl bg-white border border-gray-200 hover:shadow-card-hover transition-shadow duration-300"
               >
                 <div className="flex items-center gap-2 mb-3">
                   <span className="text-[12px] font-medium text-blue-700 bg-blue-pale border border-blue-mid px-2.5 py-1 rounded-full">

@@ -86,19 +86,21 @@ export function AboutPageContent() {
         <div className="max-w-6xl mx-auto px-6 lg:px-10">
           <div className="max-w-3xl">
             <p className="text-muted text-[17px] leading-relaxed mb-6">
-              We are Blue Modern Advisory, a GTM Strategy &amp; Engineering firm that transforms
-              how companies leverage data and large language models to convert ideal prospects and
-              drive revenue growth.
+              We started BMA because we kept seeing the same problem: B2B companies had good products
+              and weak pipelines. Not because their market was wrong, but because their data was
+              incomplete, their sequences were generic, and their tooling was built for a world
+              before AI.
             </p>
             <p className="text-muted text-[17px] leading-relaxed mb-6">
-              We build autonomous prospecting engines that streamline list building, data enrichment,
-              and sequencing workflows to intelligently scale enterprise revenue operations.
+              We set out to build the kind of GTM infrastructure that was previously only accessible
+              to companies with 10-person RevOps teams. Autonomous enrichment, Clay-native workflows,
+              AI-powered sequencing, and analytics that tell you what is actually working.
             </p>
             <p className="text-muted text-[17px] leading-relaxed">
               Today BMA serves enterprise B2B companies, PE firms, healthcare tech companies, and
-              vertical SaaS platforms. Our work spans list building and enrichment through full GTM
-              architecture and agent deployment. The Togari platform extends our healthcare
-              capabilities into a dedicated intelligence product.
+              vertical SaaS platforms. The Togari platform extends our healthcare capabilities into
+              a dedicated intelligence product for provider network mapping and clinical champion
+              identification.
             </p>
           </div>
         </div>

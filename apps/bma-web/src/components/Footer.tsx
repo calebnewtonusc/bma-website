@@ -10,6 +10,7 @@ const nav = {
   Company: [
     { label: "About",         href: "/about" },
     { label: "Case Studies",  href: "/case-studies" },
+    { label: "Content Hub",   href: "/content" },
     { label: "Contact",       href: "/contact" },
   ],
 }
