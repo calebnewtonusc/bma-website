@@ -1,15 +1,8 @@
-[phases.setup]
-nixPkgs = ["nodejs_20"]
-
 [phases.install]
-cmds = ["npm install"]
+cmds = ["npm ci"]
 
 [phases.build]
-cmds = ["npm run build"]
+cmds = ["npm run build --workspace=apps/bma-web"]
 
 [start]
-cmd = "npm run start"
-
-[variables]
-NODE_ENV = "production"
-PORT = "3000"
+cmd = "npm run start --workspace=apps/bma-web"
