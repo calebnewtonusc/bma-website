@@ -175,8 +175,9 @@ export function AgentsPageContent() {
                   <button
                     onClick={() => setSelectedAgent(null)}
                     className="text-muted hover:text-ink transition-colors p-2"
+                    aria-label="Close details"
                   >
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-6 h-6" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                     </svg>
                   </button>
@@ -200,7 +201,9 @@ export function AgentsPageContent() {
                     <div className="grid grid-cols-1 gap-4">
                       {Object.entries(active.metrics).map(([key, value]) => (
                         <div key={key} className="flex items-center justify-between p-4 rounded-xl bg-white border border-blue-mid">
-                          <span className="text-muted text-sm capitalize">{key.replace(/_/g, " ")}</span>
+                          <span className="text-muted text-sm">
+                            {key.replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase())}
+                          </span>
                           <span className="font-bold text-navy text-sm">{value}</span>
                         </div>
                       ))}

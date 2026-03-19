@@ -178,7 +178,7 @@ export function GTMPageContent() {
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 className="p-6 rounded-xl bg-white border border-gray-200 hover:shadow-card-hover transition-shadow duration-300 relative"
               >
-                <div className="text-5xl font-bold text-gray-100 mb-3 font-mono tracking-tight">
+                <div className="text-5xl font-bold text-blue-50 mb-3 font-mono tracking-tight select-none">
                   {String(i + 1).padStart(2, "0")}
                 </div>
                 <div className="text-xs font-semibold text-blue-600 mb-1 uppercase tracking-wider">
@@ -188,7 +188,7 @@ export function GTMPageContent() {
                 <p className="text-muted text-sm leading-relaxed">{phase.description}</p>
                 {i < deliveryModel.length - 1 && (
                   <div className="hidden lg:flex absolute -right-3 top-1/2 -translate-y-1/2 z-10 w-6 h-6 bg-white border border-gray-200 rounded-full items-center justify-center">
-                    <svg className="w-3 h-3 text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-3 h-3 text-muted" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
                   </div>

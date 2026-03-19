@@ -154,10 +154,10 @@ export function CoachingPageContent() {
                   className={`block text-center w-full px-6 py-3 font-semibold rounded-xl transition-colors text-sm ${
                     program.highlighted
                       ? "bg-blue-600 hover:bg-blue-700 text-white"
-                      : "bg-navy hover:bg-ink text-white"
+                      : "bg-white hover:bg-off-white text-navy border border-gray-200 hover:border-gray-300"
                   }`}
                 >
-                  Apply for {program.name}
+                  Apply Now
                 </Link>
               </motion.div>
             ))}

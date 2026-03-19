@@ -23,8 +23,8 @@ export function HeroSection() {
           transition={{ duration: 0.4 }}
           className="text-sm font-medium text-muted mb-10"
         >
-          ★★★★★{" "}
-          <span className="text-ink">Recommended by 150+ MBB Consultants & M7 MBAs</span>
+          Trusted by operators from{" "}
+          <span className="text-ink font-semibold">McKinsey, Bain, Clay, and top M7 programs</span>
         </motion.p>
 
         {/* Headline */}
@@ -40,7 +40,7 @@ export function HeroSection() {
             <br />
             through{" "}
           </h1>
-          <div className="overflow-hidden">
+          <div className="overflow-hidden" aria-live="polite" aria-atomic="true">
             <AnimatePresence mode="wait">
               <motion.div
                 key={idx}
@@ -68,15 +68,17 @@ export function HeroSection() {
             href="/contact"
             className="inline-flex items-center gap-2 px-6 py-3.5 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-[15px] rounded-xl transition-colors shadow-cta"
           >
-            Book a Free 15-Min Call
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            Book a Free Call
+            <svg className="w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
           </Link>
-          <p className="text-[15px] text-muted leading-relaxed max-w-sm">
-            We build autonomous prospecting engines for enterprise, PE, and healthcare.
-            Led by operators from Clay and McKinsey.
-          </p>
+          <Link
+            href="/case-studies"
+            className="text-[15px] font-semibold text-navy hover:text-blue-600 transition-colors"
+          >
+            See client results &rarr;
+          </Link>
         </motion.div>
 
         {/* Metrics bar */}
@@ -87,10 +89,10 @@ export function HeroSection() {
           className="mt-20 pt-10 border-t border-gray-200 grid grid-cols-2 md:grid-cols-4 gap-8"
         >
           {[
-            { value: "150+", label: "MBB & M7 Recommendations" },
-            { value: "300%",  label: "Avg revenue lift (client reported)" },
-            { value: "3",     label: "Industry verticals" },
-            { value: "#1",    label: "Clay certified infrastructure partner" },
+            { value: "150+", label: "MBB & M7 client recommendations" },
+            { value: "300%", label: "Avg pipeline growth, client reported" },
+            { value: "3",    label: "Industry verticals served" },
+            { value: "Clay", label: "Certified infrastructure partner" },
           ].map(m => (
             <div key={m.label}>
               <p className="font-mono text-2xl font-bold text-navy mb-1">{m.value}</p>

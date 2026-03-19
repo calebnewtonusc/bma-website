@@ -95,8 +95,8 @@ export function ContentPageContent() {
     return typeMatch && industryMatch
   })
 
-  const featured = filtered.filter((i) => i.featured)[0] ?? filtered[0]
-  const rest = filtered.filter((i) => i !== featured)
+  const featured = filtered.find((i) => i.featured) ?? null
+  const rest = featured ? filtered.filter((i) => i !== featured) : filtered
 
   return (
     <>
@@ -179,6 +179,10 @@ export function ContentPageContent() {
                 Full article coming soon
               </span>
             </motion.div>
+          )}
+
+          {rest.length === 0 && !featured && (
+            <p className="text-muted text-sm py-12 text-center">No articles match this filter combination.</p>
           )}
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

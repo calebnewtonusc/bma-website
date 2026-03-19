@@ -11,7 +11,7 @@ const founders = [
     focus: "GTM Architecture",
     bio: "Sagar built and scaled outbound engines at top B2B companies from Series A through pre-IPO. Led GTM strategy at Clay and McKinsey & Company. At BMA, he leads GTM architecture for enterprise and PE clients and is the architect of the BMA enrichment methodology and structured playbook framework.",
     specialties: ["Outbound sequence design", "ICP definition frameworks", "Multi-stakeholder selling", "Clay workflow architecture"],
-    initial: "S",
+    initial: "ST",
   },
   {
     name: "Kevin Cong",
@@ -19,7 +19,7 @@ const founders = [
     focus: "Campaign Strategy",
     bio: "Kevin is a specialist in multi-channel outbound strategy and Clay-powered campaign architecture. He drives campaign activation, A/B testing frameworks, and steady-state experimentation for BMA clients across enterprise and growth-stage companies.",
     specialties: ["Multi-channel campaign design", "Clay-powered activation", "Sequence copywriting", "Conversion optimization"],
-    initial: "K",
+    initial: "KC",
   },
   {
     name: "Karthik Devarakonda",
@@ -27,7 +27,7 @@ const founders = [
     focus: "Systems Engineering",
     bio: "Karthik built the data infrastructure that powers BMA's autonomous prospecting engines. Previously led data engineering teams through 10x growth phases with hands-on experience across every major enrichment tool and API in the GTM stack.",
     specialties: ["API integration & data fusion", "CRM data modeling", "Enrichment tool evaluation", "Autonomous agent deployment"],
-    initial: "K",
+    initial: "KD",
   },
 ]
 
@@ -58,7 +58,7 @@ export function AboutPageContent() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-36 pb-24 bg-white">
+      <section className="pt-32 pb-24 bg-white">
         <div className="max-w-6xl mx-auto px-6 lg:px-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -126,7 +126,7 @@ export function AboutPageContent() {
                 className="p-8 rounded-2xl bg-white border border-gray-200 hover:shadow-card-hover transition-shadow duration-300"
               >
                 <div className="w-14 h-14 rounded-2xl bg-navy flex items-center justify-center mb-6">
-                  <span className="text-white font-bold text-2xl">{founder.initial}</span>
+                  <span className="text-white font-bold text-sm tracking-wide">{founder.initial}</span>
                 </div>
                 <div className="mb-1">
                   <span className="font-bold text-navy text-xl">{founder.name}</span>

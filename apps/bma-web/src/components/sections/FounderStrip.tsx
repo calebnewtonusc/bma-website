@@ -3,9 +3,9 @@ import { motion } from "framer-motion"
 import Link from "next/link"
 
 const team = [
-  { name: "Sagar Tiwari",        role: "Founder & Chairman",       note: "GTM architecture & enrichment strategy. Clay and McKinsey background." },
-  { name: "Kevin Cong",          role: "Founding GTM Strategist",  note: "Multi-channel campaign design and Clay-powered outbound." },
-  { name: "Karthik Devarakonda", role: "Founding GTM Engineer",    note: "AI systems, data infrastructure, and CRM engineering." },
+  { name: "Sagar Tiwari",        role: "Founder & Chairman",       note: "GTM architecture & enrichment strategy. Clay and McKinsey background.", initial: "ST" },
+  { name: "Kevin Cong",          role: "Founding GTM Strategist",  note: "Multi-channel campaign design and Clay-powered outbound.", initial: "KC" },
+  { name: "Karthik Devarakonda", role: "Founding GTM Engineer",    note: "AI systems, data infrastructure, and CRM engineering.", initial: "KD" },
 ]
 
 export function FounderStrip() {
@@ -35,7 +35,7 @@ export function FounderStrip() {
               className="bg-white p-8"
             >
               <div className="w-10 h-10 rounded-xl bg-navy flex items-center justify-center mb-6">
-                <span className="text-white text-sm font-bold">{m.name[0]}</span>
+                <span className="text-white text-[11px] font-bold tracking-wide">{m.initial}</span>
               </div>
               <p className="font-semibold text-[16px] text-navy mb-0.5">{m.name}</p>
               <p className="text-[13px] text-blue-600 font-medium mb-4">{m.role}</p>

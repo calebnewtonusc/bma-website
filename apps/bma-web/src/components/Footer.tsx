@@ -45,7 +45,7 @@ export function Footer() {
       </div>
       <div className="border-t border-white/10">
         <div className="max-w-6xl mx-auto px-6 lg:px-10 py-6">
-          <p className="text-[13px] text-white/30">© 2026 Blue Modern AI LLC</p>
+          <p className="text-[13px] text-white/40">© 2026 Blue Modern Advisory (Blue Modern AI LLC)</p>
         </div>
       </div>
     </footer>

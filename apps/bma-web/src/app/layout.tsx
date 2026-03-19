@@ -22,6 +22,18 @@ export const metadata: Metadata = {
   title: { default: "Blue Modern Advisory | GTM Strategy & Engineering", template: "%s | Blue Modern Advisory" },
   description: "Blue Modern Advisory is a GTM Strategy & Engineering firm that builds autonomous prospecting engines for enterprise and growth companies. Led by operators from Clay and McKinsey.",
   robots: { index: true, follow: true },
+  openGraph: {
+    type: "website",
+    siteName: "Blue Modern Advisory",
+    title: "Blue Modern Advisory | GTM Strategy & Engineering",
+    description: "Autonomous prospecting engines for enterprise, PE, and healthcare. Led by operators from Clay and McKinsey.",
+    url: "https://bluemodernadvisory.com",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Blue Modern Advisory | GTM Strategy & Engineering",
+    description: "Autonomous prospecting engines for enterprise, PE, and healthcare. Led by operators from Clay and McKinsey.",
+  },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

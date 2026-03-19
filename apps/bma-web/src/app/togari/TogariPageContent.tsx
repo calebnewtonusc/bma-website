@@ -63,10 +63,7 @@ export function TogariPageContent() {
             >
               <div className="flex gap-2 mb-6">
                 <span className="text-[12px] font-medium text-blue-700 bg-blue-pale border border-blue-mid px-2.5 py-1 rounded-full">
-                  Healthcare Platform
-                </span>
-                <span className="text-[12px] font-medium text-emerald-700 bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded-full">
-                  by BMA
+                  Healthcare Intelligence Platform
                 </span>
               </div>
               <h1 className="text-display font-bold text-navy tracking-[-0.025em] mb-6">
@@ -107,9 +104,9 @@ export function TogariPageContent() {
                 </div>
                 <div className="space-y-3">
                   {[
-                    { label: "Data Layer", sub: "1.2M providers • 8K health systems • 400+ payors", color: "blue" },
-                    { label: "Intelligence Layer", sub: "Relationship mapping • Influence scoring • Signal monitoring", color: "indigo" },
-                    { label: "Action Layer", sub: "Territory plans • Champion lists • Sequence triggers", color: "violet" },
+                    { label: "Data Layer", sub: "1.2M providers • 8K health systems • 400+ payors" },
+                    { label: "Intelligence Layer", sub: "Relationship mapping • Influence scoring • Signal monitoring" },
+                    { label: "Action Layer", sub: "Territory plans • Champion lists • Sequence triggers" },
                   ].map((layer) => (
                     <div
                       key={layer.label}

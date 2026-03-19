@@ -187,7 +187,7 @@ export function ContactPageContent() {
                             onChange={(e) => setFormData({ ...formData, stage: e.target.value })}
                             className="w-full px-3 py-2.5 bg-white border border-gray-200 rounded-lg text-ink text-sm focus:outline-none focus:border-blue-400 transition-colors"
                           >
-                            <option value="">Select company stage</option>
+                            <option value="" disabled>Select company stage</option>
                             <option value="Pre-seed/Seed">Pre-seed / Seed</option>
                             <option value="Series A">Series A</option>
                             <option value="Series B+">Series B+</option>
