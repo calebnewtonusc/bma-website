@@ -3,16 +3,17 @@ import { notFound } from "next/navigation";
 import { getCaseStudy, caseStudies } from "@/lib/case-studies";
 import { CaseStudyDetail } from "./CaseStudyDetail";
 
-interface Props {
-  params: { slug: string };
-}
+type Props = {
+  params: Promise<{ slug: string }>;
+};
 
 export function generateStaticParams() {
   return caseStudies.map((cs) => ({ slug: cs.slug }));
 }
 
-export function generateMetadata({ params }: Props): Metadata {
-  const cs = getCaseStudy(params.slug);
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const cs = getCaseStudy(slug);
   if (!cs) return {};
   return {
     title: cs.title,
@@ -20,8 +21,9 @@ export function generateMetadata({ params }: Props): Metadata {
   };
 }
 
-export default function CaseStudyPage({ params }: Props) {
-  const cs = getCaseStudy(params.slug);
+export default async function CaseStudyPage({ params }: Props) {
+  const { slug } = await params;
+  const cs = getCaseStudy(slug);
   if (!cs) notFound();
   return <CaseStudyDetail cs={cs} />;
 }
