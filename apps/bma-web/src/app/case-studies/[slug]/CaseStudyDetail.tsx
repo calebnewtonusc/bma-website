@@ -67,7 +67,7 @@ export function CaseStudyDetail({ cs }: { cs: CaseStudy }) {
                 <h2 className="text-title font-bold text-navy mb-4">The BMA Approach</h2>
                 <ul className="space-y-3">
                   {cs.approach.map((step, i) => (
-                    <li key={i} className="flex gap-4 text-muted">
+                    <li key={step.slice(0, 40)} className="flex gap-4 text-muted">
                       <span className="text-blue-600 font-bold text-sm mt-0.5 flex-shrink-0">{String(i + 1).padStart(2, "0")}</span>
                       <span className="text-sm leading-relaxed">{step}</span>
                     </li>
