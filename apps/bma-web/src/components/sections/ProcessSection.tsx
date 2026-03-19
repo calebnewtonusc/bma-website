@@ -28,7 +28,7 @@ export function ProcessSection() {
           Three phases. One working system.
         </h2>
 
-        <div className="space-y-0">
+        <div>
           {steps.map((s, i) => (
             <motion.div
               key={s.n}
@@ -36,7 +36,7 @@ export function ProcessSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.4, delay: i * 0.08 }}
-              className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10 py-10 border-t border-gray-200"
+              className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10 py-10 border-t border-gray-200 last:border-b"
             >
               <div className="md:col-span-2">
                 <span className="font-mono text-[13px] text-muted">{s.n}</span>
@@ -49,7 +49,6 @@ export function ProcessSection() {
               </div>
             </motion.div>
           ))}
-          <div className="border-t border-gray-200" />
         </div>
       </div>
     </section>

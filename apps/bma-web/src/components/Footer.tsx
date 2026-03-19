@@ -30,22 +30,24 @@ export function Footer() {
         </div>
         {Object.entries(nav).map(([section, links]) => (
           <div key={section}>
-            <p className="text-xs font-semibold uppercase tracking-widest text-white/30 mb-4">{section}</p>
-            <ul className="space-y-3">
-              {links.map(l => (
-                <li key={l.href}>
-                  <Link href={l.href} className="text-[15px] text-white/50 hover:text-white transition-colors">
-                    {l.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            <p className="text-xs font-semibold uppercase tracking-widest text-white/50 mb-4">{section}</p>
+            <nav aria-label={`${section} links`}>
+              <ul className="space-y-3">
+                {links.map(l => (
+                  <li key={l.href}>
+                    <Link href={l.href} className="text-[15px] text-white/65 hover:text-white transition-colors">
+                      {l.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
           </div>
         ))}
       </div>
       <div className="border-t border-white/10">
         <div className="max-w-6xl mx-auto px-6 lg:px-10 py-6">
-          <p className="text-[13px] text-white/40">© 2026 Blue Modern Advisory (Blue Modern AI LLC)</p>
+          <p className="text-[13px] text-white/50">© 2026 Blue Modern Advisory (Blue Modern AI LLC)</p>
         </div>
       </div>
     </footer>

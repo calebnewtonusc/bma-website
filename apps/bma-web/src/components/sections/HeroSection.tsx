@@ -7,10 +7,12 @@ const phrases = ["Strategy & Engineering", "Pipeline Intelligence", "Agentic Inf
 
 export function HeroSection() {
   const [idx, setIdx] = useState(0)
+  const [paused, setPaused] = useState(false)
   useEffect(() => {
-    const t = setInterval(() => setIdx(i => (i + 1) % phrases.length), 3000)
+    if (paused) return
+    const t = setInterval(() => setIdx(i => (i + 1) % phrases.length), 2500)
     return () => clearInterval(t)
-  }, [])
+  }, [paused])
 
   return (
     <section className="pt-32 pb-24 bg-white">
@@ -40,7 +42,13 @@ export function HeroSection() {
             <br />
             through{" "}
           </h1>
-          <div className="overflow-hidden" aria-live="polite" aria-atomic="true">
+          <div
+            className="overflow-hidden"
+            aria-live="polite"
+            aria-atomic="true"
+            onMouseEnter={() => setPaused(true)}
+            onMouseLeave={() => setPaused(false)}
+          >
             <AnimatePresence mode="wait">
               <motion.div
                 key={idx}
@@ -92,13 +100,18 @@ export function HeroSection() {
             { value: "150+", label: "MBB & M7 client recommendations" },
             { value: "300%", label: "Avg pipeline growth, client reported" },
             { value: "3",    label: "Industry verticals served" },
-            { value: "Clay", label: "Certified infrastructure partner" },
           ].map(m => (
             <div key={m.label}>
               <p className="font-mono text-2xl font-bold text-navy mb-1">{m.value}</p>
               <p className="text-[13px] text-muted leading-snug">{m.label}</p>
             </div>
           ))}
+          <div>
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-blue-pale border border-blue-mid rounded-full text-[13px] font-semibold text-blue-700 mb-1">
+              Clay
+            </span>
+            <p className="text-[13px] text-muted leading-snug">Certified infrastructure partner</p>
+          </div>
         </motion.div>
       </div>
     </section>

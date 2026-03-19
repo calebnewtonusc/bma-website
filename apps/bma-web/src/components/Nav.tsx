@@ -1,5 +1,6 @@
 "use client"
 import { useState, useEffect } from "react"
+import { motion, AnimatePresence } from "framer-motion"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 
@@ -34,7 +35,7 @@ export function Nav() {
         </Link>
 
         {/* Desktop links */}
-        <nav className="hidden md:flex items-center gap-1">
+        <nav aria-label="Main navigation" className="hidden md:flex items-center gap-1">
           {links.map(l => {
             const active = pathname === l.href || pathname.startsWith(l.href + "/")
             return (
@@ -81,24 +82,32 @@ export function Nav() {
       </div>
 
       {/* Mobile menu */}
-      {open && (
-        <div className="md:hidden border-t border-gray-200 bg-white px-6 py-4 space-y-1">
-          {links.map(l => (
-            <Link
-              key={l.href}
-              href={l.href}
-              className="block px-3 py-2.5 text-[15px] font-medium text-ink hover:bg-off-white rounded-lg transition-colors"
-            >
-              {l.label}
-            </Link>
-          ))}
-          <div className="pt-3 border-t border-gray-100 mt-3">
-            <Link href="/contact" className="block text-center py-2.5 text-[15px] font-semibold text-white bg-blue-600 rounded-lg">
-              Book a Call
-            </Link>
-          </div>
-        </div>
-      )}
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ opacity: 0, y: -4 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -4 }}
+            transition={{ duration: 0.18 }}
+            className="md:hidden border-t border-gray-200 bg-white px-6 py-4 space-y-1"
+          >
+            {links.map(l => (
+              <Link
+                key={l.href}
+                href={l.href}
+                className="block px-3 py-2.5 text-[15px] font-medium text-ink hover:bg-off-white rounded-lg transition-colors"
+              >
+                {l.label}
+              </Link>
+            ))}
+            <div className="pt-3 border-t border-gray-100 mt-3">
+              <Link href="/contact" className="block text-center py-2.5 text-[15px] font-semibold text-white bg-blue-600 rounded-lg">
+                Book a Call
+              </Link>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   )
 }

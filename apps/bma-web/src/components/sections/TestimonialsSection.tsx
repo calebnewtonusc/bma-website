@@ -30,15 +30,15 @@ export function TestimonialsSection() {
       <div className="max-w-6xl mx-auto px-6 lg:px-10">
         <p className="text-sm font-semibold text-blue-600 tracking-widest uppercase mb-3">Client Results</p>
         <h2 className="text-display font-bold text-navy tracking-[-0.025em] mb-16">
-          What our clients say.
+          What our clients say
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-gray-200">
           {quotes.map((q, i) => (
             <motion.div
               key={q.name + q.co}
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.4, delay: i * 0.07 }}
               className="bg-white p-10"
@@ -50,10 +50,10 @@ export function TestimonialsSection() {
                 <div className="w-8 h-8 rounded-full bg-navy flex items-center justify-center flex-shrink-0">
                   <span className="text-white text-[11px] font-bold">{q.name[0]}</span>
                 </div>
-                <div>
+                <cite className="not-italic">
                   <p className="text-[14px] font-semibold text-ink">{q.name}</p>
                   <p className="text-[13px] text-muted">{q.co}</p>
-                </div>
+                </cite>
               </footer>
             </motion.div>
           ))}

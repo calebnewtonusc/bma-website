@@ -47,12 +47,12 @@ export function WhatWeDoSection() {
             >
               <Link
                 href={s.href}
-                className="group block h-full bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-card-hover transition-shadow duration-300"
+                className="group flex flex-col h-full bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-card-hover transition-shadow duration-300"
               >
                 <span className="font-mono text-[13px] text-muted mb-6 block">{s.label}</span>
-                <h3 className="font-bold text-[1.15rem] text-navy leading-snug tracking-tight mb-4">{s.title}</h3>
-                <p className="text-[15px] text-muted leading-relaxed mb-8">{s.body}</p>
-                <div className="flex flex-wrap gap-2 mt-auto">
+                <h3 className="font-bold text-[1.15rem] text-navy group-hover:text-blue-600 leading-snug tracking-tight mb-4 transition-colors">{s.title}</h3>
+                <p className="text-[15px] text-muted leading-relaxed mb-8 flex-1">{s.body}</p>
+                <div className="flex flex-wrap gap-2">
                   {s.tags.map(t => (
                     <span key={t} className="text-[12px] font-medium text-blue-700 bg-blue-pale border border-blue-mid px-2.5 py-1 rounded-full">
                       {t}
