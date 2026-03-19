@@ -2,8 +2,6 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { SectionLabel } from "@/components/ui/SectionLabel";
-import { Badge } from "@/components/ui/Badge";
 import { CTASection } from "@/components/sections/CTASection";
 
 const offerings = [
@@ -81,37 +79,45 @@ export function GTMPageContent() {
   return (
     <>
       {/* Hero */}
-      <section className="relative pt-32 pb-20 bg-navy-950 overflow-hidden">
-        <div className="absolute inset-0 bg-grid opacity-50" />
-        <div className="absolute top-0 left-1/4 w-[600px] h-[400px] bg-accent-blue/6 blur-[100px] rounded-full" />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative pt-36 pb-24 bg-white overflow-hidden">
+        <div className="absolute inset-0 bg-light-grid bg-grid-md opacity-100" />
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background: "radial-gradient(ellipse 60% 50% at 30% 50%, rgba(29,78,216,0.05), transparent)",
+          }}
+        />
+        <div className="relative max-w-content mx-auto px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="max-w-3xl"
           >
-            <SectionLabel>GTM Strategy & Engineering</SectionLabel>
-            <h1 className="text-display-xl font-bold text-white mb-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 mb-6">
+              <div className="w-1.5 h-1.5 rounded-full bg-blue-700" />
+              <span className="text-blue-700 text-xs font-semibold uppercase tracking-widest">GTM Strategy & Engineering</span>
+            </div>
+            <h1 className="font-display text-display-xl font-extrabold text-navy-900 tracking-tight mb-6">
               The full revenue stack,
               <br />
-              <span className="gradient-text">engineered to close.</span>
+              <span className="gradient-text-blue">engineered to close.</span>
             </h1>
-            <p className="text-xl text-slate-400 leading-relaxed mb-8">
+            <p className="text-xl text-gray-500 leading-relaxed mb-8 max-w-2xl">
               Most GTM consultants hand you a deck. We hand you a working system: live lists,
-              enriched accounts, tested sequences, and the analytics to prove it&apos;s working.
+              enriched accounts, tested sequences, and the analytics to prove it is working.
               No theory. Just pipeline.
             </p>
-            <div className="flex gap-4">
+            <div className="flex flex-wrap gap-4">
               <Link
                 href="/contact"
-                className="px-7 py-3.5 bg-accent-blue hover:bg-accent-blue-light text-white font-semibold rounded-lg transition-all text-sm"
+                className="px-7 py-3.5 bg-blue-700 hover:bg-blue-800 text-white font-semibold rounded-lg transition-all shadow-cta-blue text-sm"
               >
                 Start a GTM Engagement
               </Link>
               <Link
                 href="/case-studies"
-                className="px-7 py-3.5 bg-white/[0.06] hover:bg-white/[0.1] text-white font-semibold rounded-lg border border-white/[0.1] transition-all text-sm"
+                className="px-7 py-3.5 bg-white hover:bg-gray-50 text-navy-900 font-semibold rounded-lg border border-gray-200 hover:border-gray-300 transition-all text-sm"
               >
                 See the Results
               </Link>
@@ -121,11 +127,14 @@ export function GTMPageContent() {
       </section>
 
       {/* Industry offerings */}
-      <section className="py-20 bg-navy-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <SectionLabel className="justify-center">By Industry</SectionLabel>
-            <h2 className="text-display-md font-bold text-white">
+      <section className="py-24 bg-gray-50">
+        <div className="max-w-content mx-auto px-6 lg:px-8">
+          <div className="mb-14">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 mb-5">
+              <div className="w-1.5 h-1.5 rounded-full bg-blue-700" />
+              <span className="text-blue-700 text-xs font-semibold uppercase tracking-widest">By Industry</span>
+            </div>
+            <h2 className="font-display text-display-md font-extrabold text-navy-900 tracking-tight">
               Sector-specific GTM playbooks
             </h2>
           </div>
@@ -138,19 +147,21 @@ export function GTMPageContent() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="p-8 rounded-xl bg-surface-card card-border"
+                className="p-8 rounded-2xl bg-white border border-gray-200 shadow-card hover:shadow-card-hover transition-all duration-200"
               >
-                <Badge variant="blue" className="mb-4">{offering.badge}</Badge>
-                <h3 className="text-white font-bold text-xl mb-1">{offering.title}</h3>
-                <p className="text-accent-blue-light text-sm font-medium mb-4">{offering.subtitle}</p>
-                <p className="text-slate-400 text-sm leading-relaxed mb-6">
-                  {offering.description}
+                <span className="inline-flex items-center px-2.5 py-1 bg-blue-50 text-blue-700 text-xs font-semibold rounded-full border border-blue-100 mb-5">
+                  {offering.badge}
+                </span>
+                <h3 className="font-display font-bold text-navy-900 text-xl mb-1">{offering.title}</h3>
+                <p className="text-blue-700 text-sm font-semibold mb-4">{offering.subtitle}</p>
+                <p className="text-gray-500 text-sm leading-relaxed mb-6 whitespace-pre-line">
+                  {offering.description.replace(/&apos;/g, "'")}
                 </p>
-                <h4 className="text-white text-xs font-semibold uppercase tracking-wider mb-3">Deliverables</h4>
+                <h4 className="text-navy-900 text-xs font-semibold uppercase tracking-wider mb-3">Deliverables</h4>
                 <ul className="space-y-2">
                   {offering.deliverables.map((d) => (
-                    <li key={d} className="flex items-start gap-2.5 text-sm text-slate-300">
-                      <div className="w-1.5 h-1.5 rounded-full bg-accent-blue mt-1.5 flex-shrink-0" />
+                    <li key={d} className="flex items-start gap-2.5 text-sm text-gray-600">
+                      <div className="w-1.5 h-1.5 rounded-full bg-blue-700 mt-1.5 flex-shrink-0" />
                       {d}
                     </li>
                   ))}
@@ -162,11 +173,14 @@ export function GTMPageContent() {
       </section>
 
       {/* Delivery model */}
-      <section className="py-20 bg-navy-950">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <SectionLabel className="justify-center">Delivery Model</SectionLabel>
-            <h2 className="text-display-md font-bold text-white">
+      <section className="py-24 bg-white">
+        <div className="max-w-content mx-auto px-6 lg:px-8">
+          <div className="mb-14">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 mb-5">
+              <div className="w-1.5 h-1.5 rounded-full bg-blue-700" />
+              <span className="text-blue-700 text-xs font-semibold uppercase tracking-widest">Delivery Model</span>
+            </div>
+            <h2 className="font-display text-display-md font-extrabold text-navy-900 tracking-tight">
               How an engagement works
             </h2>
           </div>
@@ -178,15 +192,19 @@ export function GTMPageContent() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="p-6 rounded-xl bg-surface-card card-border relative"
+                className="p-6 rounded-xl bg-white border border-gray-200 shadow-card relative"
               >
-                <div className="text-4xl font-bold text-accent-blue/20 mb-3">{String(i + 1).padStart(2, "0")}</div>
-                <div className="text-xs font-medium text-accent-blue-light mb-1 uppercase tracking-wider">{phase.weeks}</div>
-                <h3 className="text-white font-semibold text-lg mb-3">{phase.phase}</h3>
-                <p className="text-slate-400 text-sm leading-relaxed">{phase.description}</p>
+                <div className="text-5xl font-bold text-blue-700/10 mb-3 font-display tracking-tight">
+                  {String(i + 1).padStart(2, "0")}
+                </div>
+                <div className="text-xs font-semibold text-blue-700 mb-1 uppercase tracking-wider">
+                  {phase.weeks}
+                </div>
+                <h3 className="font-display font-bold text-navy-900 text-lg mb-3">{phase.phase}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{phase.description}</p>
                 {i < deliveryModel.length - 1 && (
-                  <div className="hidden lg:block absolute -right-3 top-1/2 -translate-y-1/2 z-10">
-                    <svg className="w-6 h-6 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="hidden lg:flex absolute -right-3 top-1/2 -translate-y-1/2 z-10 w-6 h-6 bg-white border border-gray-200 rounded-full items-center justify-center shadow-sm">
+                    <svg className="w-3 h-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
                   </div>
