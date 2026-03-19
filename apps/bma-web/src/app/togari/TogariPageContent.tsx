@@ -8,26 +8,32 @@ const capabilities = [
   {
     title: "Provider Network Mapping",
     description: "Map every physician, NP, PA, and allied health professional across 1.2M+ providers. Understand referral patterns, affiliations, and clinical relationships that define real influence.",
+    icon: "🏥",
   },
   {
     title: "Health System Intelligence",
     description: "Track 8,000+ health systems and IDNs. Monitor consolidation activity, new facility openings, executive changes, and technology procurement signals.",
+    icon: "🔍",
   },
   {
     title: "Payor & Formulary Analysis",
     description: "Navigate payor networks, formulary inclusion status, and contract structures. Know which payors your target physicians accept before your first conversation.",
+    icon: "📋",
   },
   {
     title: "Clinical Champion Identification",
     description: "Identify the physicians and administrators who drive purchasing decisions. Our model scores each provider by influence, reach, and likelihood to champion new solutions.",
+    icon: "⭐",
   },
   {
     title: "Regulatory Signal Monitoring",
     description: "Track FDA submissions, CMS compliance filings, accreditation changes, and quality metrics that signal need and urgency in your target accounts.",
+    icon: "📊",
   },
   {
     title: "Market Entry Planning",
     description: "Full metro-market analysis: total addressable providers, competitive presence, payor mix, and recommended territory structures for field sales teams.",
+    icon: "🗺️",
   },
 ]
 
@@ -121,7 +127,7 @@ export function TogariPageContent() {
                   {[
                     { n: "1.2M+", l: "Providers" },
                     { n: "97%", l: "Accuracy" },
-                    { n: "Daily", l: "Updates" },
+                    { n: "Real-time", l: "Updates" },
                   ].map((s) => (
                     <div key={s.l} className="py-3 rounded-lg bg-white border border-gray-200">
                       <div className="text-blue-600 font-bold">{s.n}</div>
@@ -154,6 +160,7 @@ export function TogariPageContent() {
                 transition={{ duration: 0.5, delay: i * 0.08 }}
                 className="p-7 rounded-xl bg-white border border-gray-200 hover:shadow-card-hover transition-shadow duration-300"
               >
+                <div className="text-3xl mb-4">{cap.icon}</div>
                 <h3 className="text-navy font-semibold text-base mb-3">{cap.title}</h3>
                 <p className="text-muted text-sm leading-relaxed">{cap.description}</p>
               </motion.div>

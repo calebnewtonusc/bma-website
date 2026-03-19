@@ -56,7 +56,7 @@ const deliveryModel = [
   {
     phase: "Discovery",
     weeks: "Week 1-2",
-    description: "Deep dive on your ICP, current state analysis, competitive landscape, and data audit. Nothing is assumed — everything is verified.",
+    description: "Deep dive on your ICP, current state analysis, competitive landscape, and data audit. We leave no assumptions on the table.",
   },
   {
     phase: "Architecture",

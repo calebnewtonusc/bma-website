@@ -157,7 +157,7 @@ export function CoachingPageContent() {
                       : "bg-white hover:bg-off-white text-navy border border-gray-200 hover:border-gray-300"
                   }`}
                 >
-                  Apply Now
+                  Apply for {program.name}
                 </Link>
               </motion.div>
             ))}
