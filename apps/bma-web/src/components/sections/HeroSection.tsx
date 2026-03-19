@@ -90,7 +90,7 @@ export function HeroSection() {
             { value: "150+", label: "MBB & M7 Recommendations" },
             { value: "300%",  label: "Avg revenue lift (client reported)" },
             { value: "3",     label: "Industry verticals" },
-            { value: "Clay",  label: "Certified infrastructure partner" },
+            { value: "#1",    label: "Clay certified infrastructure partner" },
           ].map(m => (
             <div key={m.label}>
               <p className="font-mono text-2xl font-bold text-navy mb-1">{m.value}</p>

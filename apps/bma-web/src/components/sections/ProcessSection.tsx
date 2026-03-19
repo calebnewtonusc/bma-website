@@ -38,10 +38,10 @@ export function ProcessSection() {
               transition={{ duration: 0.4, delay: i * 0.08 }}
               className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10 py-10 border-t border-gray-200"
             >
-              <div className="md:col-span-1">
+              <div className="md:col-span-2">
                 <span className="font-mono text-[13px] text-muted">{s.n}</span>
               </div>
-              <div className="md:col-span-4">
+              <div className="md:col-span-3">
                 <h3 className="font-bold text-title text-navy tracking-tight">{s.title}</h3>
               </div>
               <div className="md:col-span-7">

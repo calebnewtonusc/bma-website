@@ -43,6 +43,7 @@ export function WhatWeDoSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.4, delay: i * 0.08 }}
+              className="h-full"
             >
               <Link
                 href={s.href}

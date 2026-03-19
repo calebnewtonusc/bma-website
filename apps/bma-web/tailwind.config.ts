@@ -21,10 +21,10 @@ const config: Config = {
         mono:  ["var(--font-mono)", "monospace"],
       },
       fontSize: {
-        "hero":    ["5.5rem",  { lineHeight: "1.05", letterSpacing: "-0.035em" }],
-        "display": ["3.75rem", { lineHeight: "1.1",  letterSpacing: "-0.025em" }],
-        "title":   ["2.25rem", { lineHeight: "1.2",  letterSpacing: "-0.02em"  }],
-        "lead":    ["1.2rem",  { lineHeight: "1.65", letterSpacing: "-0.01em"  }],
+        "hero":    ["clamp(2.25rem, 6vw, 5.5rem)",   { lineHeight: "1.05", letterSpacing: "-0.035em" }],
+        "display": ["clamp(1.75rem, 4vw, 3.75rem)",  { lineHeight: "1.1",  letterSpacing: "-0.025em" }],
+        "title":   ["clamp(1.35rem, 2.5vw, 2.25rem)",{ lineHeight: "1.2",  letterSpacing: "-0.02em"  }],
+        "lead":    ["clamp(1rem, 1.5vw, 1.2rem)",    { lineHeight: "1.65", letterSpacing: "-0.01em"  }],
       },
       boxShadow: {
         "card-hover": "0 4px 24px rgba(0,0,0,0.08)",
