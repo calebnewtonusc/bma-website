@@ -13,7 +13,7 @@ const agents = [
     category: "Prospecting",
     status: "Production",
     description:
-      "ProspectFinder operates continuously across 40+ data sources to surface net-new accounts that match your ICP. It applies technographic filters, firmographic scoring, and buying signal detection to prioritize accounts by likelihood to convert.",
+      "ProspectFinder operates continuously across 40+ data sources to surface net-new accounts that match your ICP.",
     capabilities: [
       "Real-time ICP matching against live firmographic data",
       "Technographic stack identification and scoring",
@@ -30,7 +30,7 @@ const agents = [
     category: "Enrichment",
     status: "Production",
     description:
-      "Takes a list of company names or domains and returns fully enriched account profiles in minutes. Pulls from proprietary data sources, web scraping, public filings, and API integrations to build the most complete account intelligence available.",
+      "Takes a list of company names or domains and returns fully enriched account profiles in minutes.",
     capabilities: [
       "200+ firmographic and technographic fields",
       "Executive contact discovery and validation",
@@ -47,7 +47,7 @@ const agents = [
     category: "Sequencing",
     status: "Production",
     description:
-      "Generates personalized multi-channel sequences that read like they were written by a senior SDR with deep account knowledge. Trained on BMA's highest-performing sequences across industries, calibrated to your voice and value proposition.",
+      "Generates personalized multi-channel sequences that read like they were written by a senior SDR with deep account knowledge.",
     capabilities: [
       "Multi-channel orchestration (email, LinkedIn, phone)",
       "Account-specific personalization from enriched data",
@@ -64,7 +64,7 @@ const agents = [
     category: "Pipeline",
     status: "Production",
     description:
-      "Continuously monitors your open pipeline for signals that predict deal movement. Job changes at champion accounts, competitor activity, funding events, news mentions, and technology changes trigger real-time alerts with recommended actions.",
+      "Continuously monitors your open pipeline for signals that predict deal movement.",
     capabilities: [
       "Champion job change detection with alert routing",
       "Funding and M&A signal monitoring for open deals",
@@ -81,7 +81,7 @@ const agents = [
     category: "Healthcare",
     status: "Togari Platform",
     description:
-      "The intelligence engine behind Togari. HealthMapper builds and continuously updates provider network graphs, identifying relationship clusters, referral patterns, and influence hierarchies across healthcare organizations.",
+      "The intelligence engine behind Togari. HealthMapper builds and continuously updates provider network graphs.",
     capabilities: [
       "Provider-to-organization affiliation mapping",
       "Referral pattern analysis and champion scoring",

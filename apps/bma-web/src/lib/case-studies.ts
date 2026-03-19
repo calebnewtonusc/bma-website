@@ -36,7 +36,6 @@ export const caseStudies: CaseStudy[] = [
       { metric: "Deal Flow Velocity", value: "+3.2x", description: "Qualified deal conversations per BD partner per month" },
       { metric: "Research Time Saved", value: "60%", description: "BD team time redirected from research to relationship management" },
       { metric: "Data Accuracy", value: "94%", description: "Verified contact and ownership accuracy across enriched records" },
-      { metric: "Cold Outreach Reply Rate", value: "8.4%", description: "3.1x industry average for PE founder outreach" },
     ],
   },
   {
@@ -78,7 +77,7 @@ export const caseStudies: CaseStudy[] = [
     challenge:
       "The company needed to build relationships with surgical directors and OR managers across 400+ health facilities in 6 markets, but had no existing relationships and no intelligence on who the right targets were. Their 4-person field team was expected to cover 1,500+ facilities.",
     approach: [
-      "Deployed Togari to map all surgical facilities across 6 target metros (Boston, Chicago, Houston, Phoenix, Seattle, Denver)",
+      "Deployed Togari to map all surgical facilities across all 6 target metro markets",
       "Identified surgical directors, OR managers, and department chiefs at each facility with verified contact information",
       "Built referral network graphs to identify which physicians drove device adoption at each major health system",
       "Scored all 1,500+ facilities by likelihood to adopt based on facility type, volume, existing technology, and clinical champion influence",
