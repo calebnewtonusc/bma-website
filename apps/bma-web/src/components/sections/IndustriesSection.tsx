@@ -1,8 +1,7 @@
-"use client";
+"use client"
 
-import { motion } from "framer-motion";
-import { SectionLabel } from "@/components/ui/SectionLabel";
-import Link from "next/link";
+import { motion } from "framer-motion"
+import Link from "next/link"
 
 const industries = [
   {
@@ -41,26 +40,26 @@ const industries = [
     ),
     href: "/gtm#vertical-saas",
   },
-];
+]
 
 export function IndustriesSection() {
   return (
-    <section className="py-24 bg-navy-900">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-24 bg-off-white section-divider">
+      <div className="max-w-6xl mx-auto px-6 lg:px-10">
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-start">
           <div className="lg:w-1/3">
-            <SectionLabel>Industries</SectionLabel>
-            <h2 className="text-display-md font-bold text-white mb-4">
+            <p className="text-sm font-semibold text-blue-600 tracking-widest uppercase mb-3">Industries</p>
+            <h2 className="text-display font-bold text-navy tracking-[-0.025em] mb-4">
               Sector expertise that matters
             </h2>
-            <p className="text-slate-400 leading-relaxed mb-8">
+            <p className="text-muted leading-relaxed mb-8">
               We don&apos;t believe in generic GTM. Every sector has distinct buyer
               behaviors, data sources, and sequencing patterns. Our industry depth
               is what separates us.
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 text-accent-blue-light hover:text-white text-sm font-semibold transition-colors"
+              className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 text-sm font-semibold transition-colors"
             >
               Discuss your industry
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -80,32 +79,31 @@ export function IndustriesSection() {
               >
                 <Link
                   href={industry.href}
-                  className="group flex gap-6 p-6 rounded-xl bg-surface-card card-border hover:border-white/[0.15] hover:bg-white/[0.02] transition-all duration-300"
+                  className="group flex gap-6 p-6 rounded-xl bg-white border border-gray-200 hover:shadow-card-hover transition-shadow duration-300"
                 >
-                  {/* Icon */}
-                  <div className="w-12 h-12 rounded-xl bg-accent-blue/10 border border-accent-blue/20 flex items-center justify-center text-accent-blue-light flex-shrink-0 group-hover:bg-accent-blue/15 transition-colors">
+                  <div className="w-12 h-12 rounded-xl bg-blue-pale border border-blue-mid flex items-center justify-center text-blue-600 flex-shrink-0">
                     {industry.icon}
                   </div>
 
                   <div className="flex-1">
-                    <h3 className="text-white font-semibold text-base mb-2 group-hover:text-blue-100 transition-colors">
+                    <h3 className="text-navy font-semibold text-base mb-2 group-hover:text-blue-600 transition-colors">
                       {industry.name}
                     </h3>
-                    <p className="text-slate-400 text-sm leading-relaxed mb-4">
+                    <p className="text-muted text-sm leading-relaxed mb-4">
                       {industry.description}
                     </p>
                     <div className="flex gap-6">
                       {industry.metrics.map((m) => (
                         <div key={m.label}>
-                          <div className="text-white font-bold text-lg">{m.value}</div>
-                          <div className="text-slate-500 text-xs">{m.label}</div>
+                          <div className="text-navy font-bold text-lg">{m.value}</div>
+                          <div className="text-muted text-xs">{m.label}</div>
                         </div>
                       ))}
                     </div>
                   </div>
 
                   <div className="self-center opacity-0 group-hover:opacity-100 transition-opacity">
-                    <svg className="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-5 h-5 text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
                   </div>
@@ -116,5 +114,5 @@ export function IndustriesSection() {
         </div>
       </div>
     </section>
-  );
+  )
 }

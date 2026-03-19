@@ -3,180 +3,36 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
-    --font-inter: 'Inter', system-ui, sans-serif;
-    --font-jakarta: 'Plus Jakarta Sans', system-ui, sans-serif;
-  }
+  *, *::before, *::after { box-sizing: border-box; }
 
-  * {
-    box-sizing: border-box;
-  }
-
-  html {
-    scroll-behavior: smooth;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
+  html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
 
   body {
-    background-color: #ffffff;
-    color: #0A1628;
-    font-family: var(--font-inter);
+    background: #FFFFFF;
+    color: #1F2937;
+    font-family: var(--font-dm), system-ui, sans-serif;
     line-height: 1.6;
+    font-size: 17px;
   }
 
-  ::selection {
-    background: rgba(29, 78, 216, 0.12);
-    color: #0A1628;
-  }
+  ::selection { background: #DBEAFE; color: #1D4ED8; }
 
-  ::-webkit-scrollbar {
-    width: 6px;
-  }
-  ::-webkit-scrollbar-track {
-    background: #F9FAFB;
-  }
-  ::-webkit-scrollbar-thumb {
-    background: #D1D5DB;
-    border-radius: 3px;
-  }
-  ::-webkit-scrollbar-thumb:hover {
-    background: #9CA3AF;
-  }
+  ::-webkit-scrollbar { width: 5px; }
+  ::-webkit-scrollbar-track { background: #F9FAFB; }
+  ::-webkit-scrollbar-thumb { background: #D1D5DB; border-radius: 9999px; }
 }
 
 @layer utilities {
-  .font-display {
-    font-family: var(--font-jakarta);
-  }
+  .text-balance { text-wrap: balance; }
 
-  .text-balance {
-    text-wrap: balance;
-  }
-
-  .bg-light-grid {
-    background-image: linear-gradient(rgba(29,78,216,0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(29,78,216,0.04) 1px, transparent 1px);
-    background-size: 60px 60px;
-  }
-
-  .bg-hero-mesh {
-    background-image:
-      radial-gradient(ellipse 80% 60% at 65% 40%, rgba(29,78,216,0.07), transparent),
-      radial-gradient(ellipse 50% 40% at 15% 70%, rgba(29,78,216,0.04), transparent);
-  }
-
-  .gradient-text-blue {
-    background: linear-gradient(135deg, #1D4ED8 0%, #2563eb 50%, #3b82f6 100%);
+  .gradient-text {
+    background: linear-gradient(135deg, #1D4ED8, #60A5FA);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
-  .prose-light {
-    color: #4B5563;
-    max-width: 72ch;
-  }
-
-  .prose-light h1,
-  .prose-light h2,
-  .prose-light h3,
-  .prose-light h4 {
-    color: #0A1628;
-    font-weight: 700;
-    font-family: var(--font-jakarta);
-    letter-spacing: -0.02em;
-  }
-
-  .prose-light h1 { font-size: 2.25rem; margin-bottom: 1rem; }
-  .prose-light h2 { font-size: 1.75rem; margin-top: 2.5rem; margin-bottom: 0.75rem; }
-  .prose-light h3 { font-size: 1.375rem; margin-top: 2rem; margin-bottom: 0.5rem; }
-
-  .prose-light p {
-    margin-bottom: 1.25rem;
-    line-height: 1.8;
-  }
-
-  .prose-light a {
-    color: #1D4ED8;
-    text-decoration: underline;
-    text-decoration-color: rgba(29,78,216,0.3);
-  }
-
-  .prose-light a:hover {
-    color: #2563eb;
-  }
-
-  .prose-light ul,
-  .prose-light ol {
-    margin-bottom: 1.25rem;
-    padding-left: 1.5rem;
-  }
-
-  .prose-light li {
-    margin-bottom: 0.5rem;
-  }
-
-  .prose-light blockquote {
-    border-left: 3px solid #1D4ED8;
-    padding-left: 1.25rem;
-    margin: 1.5rem 0;
-    color: #6B7280;
-    font-style: italic;
-  }
-
-  .prose-light code {
-    background: #F3F4F6;
-    padding: 0.15em 0.4em;
-    border-radius: 4px;
-    font-size: 0.875em;
-    color: #1D4ED8;
-  }
-
-  .prose-light pre {
-    background: #F9FAFB;
-    border: 1px solid #E5E7EB;
-    border-radius: 8px;
-    padding: 1.25rem;
-    overflow-x: auto;
-    margin: 1.5rem 0;
-  }
-
-  .prose-light pre code {
-    background: none;
-    padding: 0;
-    color: #374151;
-  }
-
-  /* Legacy dark prose for pages that haven't been updated */
-  .prose {
-    color: #cbd5e1;
-    max-width: 72ch;
-  }
-
-  .prose h1, .prose h2, .prose h3, .prose h4 {
-    color: #f8fafc;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-  }
-
-  .prose p { margin-bottom: 1.25rem; line-height: 1.75; }
-  .prose a { color: #3b82f6; }
-  .prose ul, .prose ol { margin-bottom: 1.25rem; padding-left: 1.5rem; }
-  .prose li { margin-bottom: 0.5rem; }
-
-  .card-lift {
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-
-  .card-lift:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.1), 0 24px 48px rgba(0,0,0,0.06);
-  }
-
-  /* Dark section overrides for footer/cta */
-  .section-dark {
-    background-color: #0A1628;
-    color: #f8fafc;
+  .section-divider {
+    border-top: 1px solid #E5E7EB;
   }
 }

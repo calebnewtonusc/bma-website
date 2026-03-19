@@ -1,43 +1,35 @@
-"use client";
+"use client"
 
-import { motion } from "framer-motion";
-import Link from "next/link";
-import { SectionLabel } from "@/components/ui/SectionLabel";
-import { Badge } from "@/components/ui/Badge";
-import { CTASection } from "@/components/sections/CTASection";
+import { motion } from "framer-motion"
+import Link from "next/link"
+import { CTASection } from "@/components/sections/CTASection"
 
 const capabilities = [
   {
     title: "Provider Network Mapping",
     description: "Map every physician, NP, PA, and allied health professional across 1.2M+ providers. Understand referral patterns, affiliations, and clinical relationships that define real influence.",
-    icon: "🏥",
   },
   {
     title: "Health System Intelligence",
     description: "Track 8,000+ health systems and IDNs. Monitor consolidation activity, new facility openings, executive changes, and technology procurement signals.",
-    icon: "🔍",
   },
   {
     title: "Payor & Formulary Analysis",
     description: "Navigate payor networks, formulary inclusion status, and contract structures. Know which payors your target physicians accept before your first conversation.",
-    icon: "📋",
   },
   {
     title: "Clinical Champion Identification",
     description: "Identify the physicians and administrators who drive purchasing decisions. Our model scores each provider by influence, reach, and likelihood to champion new solutions.",
-    icon: "⭐",
   },
   {
     title: "Regulatory Signal Monitoring",
     description: "Track FDA submissions, CMS compliance filings, accreditation changes, and quality metrics that signal need and urgency in your target accounts.",
-    icon: "📊",
   },
   {
     title: "Market Entry Planning",
     description: "Full metro-market analysis: total addressable providers, competitive presence, payor mix, and recommended territory structures for field sales teams.",
-    icon: "🗺️",
   },
-];
+]
 
 const useCases = [
   {
@@ -55,17 +47,14 @@ const useCases = [
     challenge: "Payor contracting was stalling market expansion due to poor network intelligence.",
     outcome: "Togari mapped the payor landscape in each target market, revealing under-contracted payors as the fastest entry points. Contracting timeline cut by 40%.",
   },
-];
+]
 
 export function TogariPageContent() {
   return (
     <>
       {/* Hero */}
-      <section className="relative pt-32 pb-20 bg-navy-950 overflow-hidden">
-        <div className="absolute inset-0 bg-grid opacity-50" />
-        <div className="absolute top-0 right-1/4 w-[600px] h-[400px] bg-cyan-500/5 blur-[100px] rounded-full" />
-
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="pt-32 pb-20 bg-white">
+        <div className="max-w-6xl mx-auto px-6 lg:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -73,15 +62,19 @@ export function TogariPageContent() {
               transition={{ duration: 0.6 }}
             >
               <div className="flex gap-2 mb-6">
-                <Badge variant="blue">Healthcare Platform</Badge>
-                <Badge variant="green">by BMA</Badge>
+                <span className="text-[12px] font-medium text-blue-700 bg-blue-pale border border-blue-mid px-2.5 py-1 rounded-full">
+                  Healthcare Platform
+                </span>
+                <span className="text-[12px] font-medium text-emerald-700 bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded-full">
+                  by BMA
+                </span>
               </div>
-              <h1 className="text-display-xl font-bold text-white mb-6">
+              <h1 className="text-display font-bold text-navy tracking-[-0.025em] mb-6">
                 Togari Health
                 <br />
-                <span className="text-cyan-400">Intelligence Platform</span>
+                <span className="text-blue-600">Intelligence Platform</span>
               </h1>
-              <p className="text-xl text-slate-400 leading-relaxed mb-8">
+              <p className="text-lead text-muted leading-relaxed mb-8">
                 The only market intelligence platform purpose-built for healthcare
                 go-to-market. Map the full provider landscape, identify clinical
                 champions, and navigate payor complexity at scale.
@@ -89,13 +82,13 @@ export function TogariPageContent() {
               <div className="flex gap-4">
                 <Link
                   href="/contact?type=togari"
-                  className="px-7 py-3.5 bg-cyan-500 hover:bg-cyan-400 text-white font-semibold rounded-lg transition-all text-sm"
+                  className="px-6 py-3.5 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition-colors text-[15px]"
                 >
                   Request a Demo
                 </Link>
                 <Link
                   href="#capabilities"
-                  className="px-7 py-3.5 bg-white/[0.06] hover:bg-white/[0.1] text-white font-semibold rounded-lg border border-white/[0.1] transition-all text-sm"
+                  className="px-6 py-3.5 bg-white hover:bg-off-white text-navy font-semibold rounded-xl border border-gray-200 hover:border-gray-300 transition-colors text-[15px]"
                 >
                   See Capabilities
                 </Link>
@@ -107,29 +100,23 @@ export function TogariPageContent() {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="relative"
             >
-              <div className="rounded-2xl border border-cyan-500/20 bg-navy-900/80 p-8">
+              <div className="rounded-2xl border border-gray-200 bg-off-white p-8">
                 <div className="text-center mb-6">
-                  <span className="text-white font-semibold">Togari Platform Overview</span>
+                  <span className="text-navy font-semibold">Togari Platform Overview</span>
                 </div>
-                {/* Three layers */}
                 <div className="space-y-3">
                   {[
-                    { label: "Data Layer", sub: "1.2M providers • 8K health systems • 400+ payors", color: "cyan" },
-                    { label: "Intelligence Layer", sub: "Relationship mapping • Influence scoring • Signal monitoring", color: "blue" },
-                    { label: "Action Layer", sub: "Territory plans • Champion lists • Sequence triggers", color: "purple" },
+                    { label: "Data Layer", sub: "1.2M providers • 8K health systems • 400+ payors", color: "blue" },
+                    { label: "Intelligence Layer", sub: "Relationship mapping • Influence scoring • Signal monitoring", color: "indigo" },
+                    { label: "Action Layer", sub: "Territory plans • Champion lists • Sequence triggers", color: "violet" },
                   ].map((layer) => (
                     <div
                       key={layer.label}
-                      className="p-4 rounded-xl border"
-                      style={{
-                        backgroundColor: layer.color === "cyan" ? "rgba(6,182,212,0.08)" : layer.color === "purple" ? "rgba(168,85,247,0.08)" : "rgba(37,99,235,0.08)",
-                        borderColor: layer.color === "cyan" ? "rgba(6,182,212,0.2)" : layer.color === "purple" ? "rgba(168,85,247,0.2)" : "rgba(37,99,235,0.2)",
-                      }}
+                      className="p-4 rounded-xl border border-blue-mid bg-blue-pale"
                     >
-                      <div className="text-white font-semibold text-sm mb-1">{layer.label}</div>
-                      <div className="text-slate-400 text-xs">{layer.sub}</div>
+                      <div className="text-navy font-semibold text-sm mb-1">{layer.label}</div>
+                      <div className="text-muted text-xs">{layer.sub}</div>
                     </div>
                   ))}
                 </div>
@@ -137,11 +124,11 @@ export function TogariPageContent() {
                   {[
                     { n: "1.2M+", l: "Providers" },
                     { n: "97%", l: "Accuracy" },
-                    { n: "Real-time", l: "Updates" },
+                    { n: "Daily", l: "Updates" },
                   ].map((s) => (
-                    <div key={s.l} className="py-3 rounded-lg bg-white/[0.03] border border-white/[0.05]">
-                      <div className="text-cyan-400 font-bold">{s.n}</div>
-                      <div className="text-slate-500 text-xs mt-0.5">{s.l}</div>
+                    <div key={s.l} className="py-3 rounded-lg bg-white border border-gray-200">
+                      <div className="text-blue-600 font-bold">{s.n}</div>
+                      <div className="text-muted text-xs mt-0.5">{s.l}</div>
                     </div>
                   ))}
                 </div>
@@ -152,11 +139,11 @@ export function TogariPageContent() {
       </section>
 
       {/* Capabilities */}
-      <section id="capabilities" className="py-20 bg-navy-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="capabilities" className="py-24 bg-off-white section-divider">
+        <div className="max-w-6xl mx-auto px-6 lg:px-10">
           <div className="text-center mb-12">
-            <SectionLabel className="justify-center">Platform Capabilities</SectionLabel>
-            <h2 className="text-display-md font-bold text-white">
+            <p className="text-sm font-semibold text-blue-600 tracking-widest uppercase mb-3">Platform Capabilities</p>
+            <h2 className="text-display font-bold text-navy tracking-[-0.025em]">
               Everything healthcare GTM requires
             </h2>
           </div>
@@ -168,11 +155,10 @@ export function TogariPageContent() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="p-7 rounded-xl bg-surface-card card-border"
+                className="p-7 rounded-xl bg-white border border-gray-200 hover:shadow-card-hover transition-shadow duration-300"
               >
-                <div className="text-3xl mb-4">{cap.icon}</div>
-                <h3 className="text-white font-semibold text-base mb-3">{cap.title}</h3>
-                <p className="text-slate-400 text-sm leading-relaxed">{cap.description}</p>
+                <h3 className="text-navy font-semibold text-base mb-3">{cap.title}</h3>
+                <p className="text-muted text-sm leading-relaxed">{cap.description}</p>
               </motion.div>
             ))}
           </div>
@@ -180,11 +166,11 @@ export function TogariPageContent() {
       </section>
 
       {/* Use Cases */}
-      <section className="py-20 bg-navy-950">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-24 bg-white section-divider">
+        <div className="max-w-6xl mx-auto px-6 lg:px-10">
           <div className="text-center mb-12">
-            <SectionLabel className="justify-center">Customer Stories</SectionLabel>
-            <h2 className="text-display-md font-bold text-white">Togari in practice</h2>
+            <p className="text-sm font-semibold text-blue-600 tracking-widest uppercase mb-3">Customer Stories</p>
+            <h2 className="text-display font-bold text-navy tracking-[-0.025em]">Togari in practice</h2>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {useCases.map((uc, i) => (
@@ -194,16 +180,16 @@ export function TogariPageContent() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="p-7 rounded-xl bg-surface-card card-border"
+                className="p-7 rounded-xl bg-white border border-gray-200 hover:shadow-card-hover transition-shadow duration-300"
               >
-                <div className="text-xs font-semibold text-cyan-400 uppercase tracking-wider mb-3">{uc.company}</div>
+                <div className="text-xs font-semibold text-blue-600 uppercase tracking-wider mb-3">{uc.company}</div>
                 <div className="mb-4">
-                  <div className="text-xs text-slate-500 uppercase tracking-wider mb-1.5">Challenge</div>
-                  <p className="text-slate-300 text-sm leading-relaxed">{uc.challenge}</p>
+                  <div className="text-xs text-muted uppercase tracking-wider mb-1.5">Challenge</div>
+                  <p className="text-ink text-sm leading-relaxed">{uc.challenge}</p>
                 </div>
                 <div>
-                  <div className="text-xs text-emerald-400 uppercase tracking-wider mb-1.5">Outcome</div>
-                  <p className="text-slate-300 text-sm leading-relaxed">{uc.outcome}</p>
+                  <div className="text-xs text-emerald-600 uppercase tracking-wider mb-1.5">Outcome</div>
+                  <p className="text-ink text-sm leading-relaxed">{uc.outcome}</p>
                 </div>
               </motion.div>
             ))}
@@ -213,5 +199,5 @@ export function TogariPageContent() {
 
       <CTASection />
     </>
-  );
+  )
 }

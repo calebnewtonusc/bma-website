@@ -1,14 +1,11 @@
-"use client";
+"use client"
 
-import { useState } from "react";
-import { motion } from "framer-motion";
-import Link from "next/link";
-import { SectionLabel } from "@/components/ui/SectionLabel";
-import { Badge } from "@/components/ui/Badge";
-import { CTASection } from "@/components/sections/CTASection";
+import { useState } from "react"
+import { motion } from "framer-motion"
+import { CTASection } from "@/components/sections/CTASection"
 
-type ContentType = "All" | "Playbook" | "Analysis" | "Teardown" | "Framework";
-type Industry = "All" | "Finance" | "Healthcare" | "SaaS" | "General";
+type ContentType = "All" | "Playbook" | "Analysis" | "Teardown" | "Framework"
+type Industry = "All" | "Finance" | "Healthcare" | "SaaS" | "General"
 
 const contentItems = [
   {
@@ -83,44 +80,35 @@ const contentItems = [
     date: "January 2026",
     featured: false,
   },
-];
+]
 
-const typeBadge: Record<ContentType, "blue" | "default" | "purple" | "amber"> = {
-  All: "default",
-  Playbook: "blue",
-  Analysis: "default",
-  Teardown: "amber",
-  Framework: "purple",
-};
-
-const typeOptions: ContentType[] = ["All", "Playbook", "Analysis", "Teardown", "Framework"];
-const industryOptions: Industry[] = ["All", "Finance", "Healthcare", "SaaS", "General"];
+const typeOptions: ContentType[] = ["All", "Playbook", "Analysis", "Teardown", "Framework"]
+const industryOptions: Industry[] = ["All", "Finance", "Healthcare", "SaaS", "General"]
 
 export function ContentPageContent() {
-  const [selectedType, setSelectedType] = useState<ContentType>("All");
-  const [selectedIndustry, setSelectedIndustry] = useState<Industry>("All");
+  const [selectedType, setSelectedType] = useState<ContentType>("All")
+  const [selectedIndustry, setSelectedIndustry] = useState<Industry>("All")
 
   const filtered = contentItems.filter((item) => {
-    const typeMatch = selectedType === "All" || item.type === selectedType;
-    const industryMatch = selectedIndustry === "All" || item.industry === selectedIndustry;
-    return typeMatch && industryMatch;
-  });
+    const typeMatch = selectedType === "All" || item.type === selectedType
+    const industryMatch = selectedIndustry === "All" || item.industry === selectedIndustry
+    return typeMatch && industryMatch
+  })
 
-  const featured = filtered.filter((i) => i.featured)[0] ?? filtered[0];
-  const rest = filtered.filter((i) => i !== featured);
+  const featured = filtered.filter((i) => i.featured)[0] ?? filtered[0]
+  const rest = filtered.filter((i) => i !== featured)
 
   return (
     <>
       {/* Hero */}
-      <section className="relative pt-32 pb-20 bg-navy-950 overflow-hidden">
-        <div className="absolute inset-0 bg-grid opacity-50" />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="pt-32 pb-20 bg-white">
+        <div className="max-w-6xl mx-auto px-6 lg:px-10 text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-            <SectionLabel className="justify-center">Content Hub</SectionLabel>
-            <h1 className="text-display-xl font-bold text-white mb-4">
+            <p className="text-sm font-semibold text-blue-600 tracking-widest uppercase mb-3">Content Hub</p>
+            <h1 className="text-display font-bold text-navy tracking-[-0.025em] mb-4">
               GTM intelligence worth reading
             </h1>
-            <p className="text-slate-400 text-xl max-w-xl mx-auto">
+            <p className="text-lead text-muted max-w-xl mx-auto">
               Playbooks, analysis, and teardowns from practitioners in the field.
             </p>
           </motion.div>
@@ -128,19 +116,19 @@ export function ContentPageContent() {
       </section>
 
       {/* Filters */}
-      <section className="py-8 bg-navy-900 border-b border-white/[0.06]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-8 bg-off-white border-b border-gray-200">
+        <div className="max-w-6xl mx-auto px-6 lg:px-10">
           <div className="flex flex-wrap gap-6 items-center">
             <div className="flex gap-2 flex-wrap">
-              <span className="text-slate-500 text-sm mr-1 self-center">Type:</span>
+              <span className="text-muted text-sm mr-1 self-center">Type:</span>
               {typeOptions.map((t) => (
                 <button
                   key={t}
                   onClick={() => setSelectedType(t)}
-                  className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-all ${
+                  className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors ${
                     selectedType === t
-                      ? "bg-accent-blue text-white"
-                      : "bg-white/[0.05] text-slate-400 hover:text-white border border-white/[0.08]"
+                      ? "bg-blue-600 text-white"
+                      : "bg-white text-muted hover:text-ink border border-gray-200"
                   }`}
                 >
                   {t}
@@ -148,15 +136,15 @@ export function ContentPageContent() {
               ))}
             </div>
             <div className="flex gap-2 flex-wrap">
-              <span className="text-slate-500 text-sm mr-1 self-center">Industry:</span>
+              <span className="text-muted text-sm mr-1 self-center">Industry:</span>
               {industryOptions.map((i) => (
                 <button
                   key={i}
                   onClick={() => setSelectedIndustry(i)}
-                  className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-all ${
+                  className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors ${
                     selectedIndustry === i
-                      ? "bg-accent-blue text-white"
-                      : "bg-white/[0.05] text-slate-400 hover:text-white border border-white/[0.08]"
+                      ? "bg-blue-600 text-white"
+                      : "bg-white text-muted hover:text-ink border border-gray-200"
                   }`}
                 >
                   {i}
@@ -168,22 +156,26 @@ export function ContentPageContent() {
       </section>
 
       {/* Content list */}
-      <section className="py-16 bg-navy-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 bg-white section-divider">
+        <div className="max-w-6xl mx-auto px-6 lg:px-10">
           {featured && (
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="mb-10 p-8 rounded-2xl bg-accent-blue/5 border border-accent-blue/20"
+              className="mb-10 p-8 rounded-2xl bg-blue-pale border border-blue-mid"
             >
               <div className="flex items-center gap-3 mb-4">
-                <Badge variant={typeBadge[featured.type]}>{featured.type}</Badge>
-                <Badge variant="default">{featured.industry}</Badge>
-                <span className="text-xs text-slate-500 ml-auto">{featured.date} · {featured.readTime} read</span>
+                <span className="text-[12px] font-medium text-blue-700 bg-white border border-blue-mid px-2.5 py-1 rounded-full">
+                  {featured.type}
+                </span>
+                <span className="text-[12px] font-medium text-muted bg-white border border-gray-200 px-2.5 py-1 rounded-full">
+                  {featured.industry}
+                </span>
+                <span className="text-xs text-muted ml-auto">{featured.date} · {featured.readTime} read</span>
               </div>
-              <h2 className="text-2xl font-bold text-white mb-3">{featured.title}</h2>
-              <p className="text-slate-400 leading-relaxed mb-5">{featured.description}</p>
-              <button className="inline-flex items-center gap-2 text-accent-blue-light font-semibold text-sm hover:text-white transition-colors">
+              <h2 className="text-title font-bold text-navy tracking-tight mb-3">{featured.title}</h2>
+              <p className="text-muted leading-relaxed mb-5">{featured.description}</p>
+              <button className="inline-flex items-center gap-2 text-blue-600 font-semibold text-sm hover:text-blue-700 transition-colors">
                 Read full article
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -200,15 +192,17 @@ export function ContentPageContent() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.06 }}
-                className="group p-6 rounded-xl bg-surface-card card-border hover:border-white/[0.15] cursor-pointer transition-all duration-300"
+                className="group p-6 rounded-xl bg-white border border-gray-200 hover:shadow-card-hover cursor-pointer transition-shadow duration-300"
               >
                 <div className="flex items-center gap-2 mb-3">
-                  <Badge variant={typeBadge[item.type]}>{item.type}</Badge>
-                  <span className="text-xs text-slate-500 ml-auto">{item.readTime} read</span>
+                  <span className="text-[12px] font-medium text-blue-700 bg-blue-pale border border-blue-mid px-2.5 py-1 rounded-full">
+                    {item.type}
+                  </span>
+                  <span className="text-xs text-muted ml-auto">{item.readTime} read</span>
                 </div>
-                <h3 className="text-white font-semibold text-base mb-2 leading-snug group-hover:text-blue-100 transition-colors">{item.title}</h3>
-                <p className="text-slate-400 text-sm leading-relaxed line-clamp-3">{item.description}</p>
-                <div className="mt-4 text-xs text-slate-600">{item.date}</div>
+                <h3 className="text-navy font-semibold text-base mb-2 leading-snug group-hover:text-blue-600 transition-colors">{item.title}</h3>
+                <p className="text-muted text-sm leading-relaxed line-clamp-3">{item.description}</p>
+                <div className="mt-4 text-xs text-muted">{item.date}</div>
               </motion.div>
             ))}
           </div>
@@ -217,5 +211,5 @@ export function ContentPageContent() {
 
       <CTASection />
     </>
-  );
+  )
 }

@@ -1,11 +1,9 @@
-"use client";
+"use client"
 
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { SectionLabel } from "@/components/ui/SectionLabel";
-import { Badge } from "@/components/ui/Badge";
-import { CTASection } from "@/components/sections/CTASection";
-import Link from "next/link";
+import { useState } from "react"
+import { motion, AnimatePresence } from "framer-motion"
+import { CTASection } from "@/components/sections/CTASection"
+import Link from "next/link"
 
 const agents = [
   {
@@ -24,7 +22,6 @@ const agents = [
       "Lookalike expansion from your best existing customers",
     ],
     metrics: { accuracy: "94%", daily_accounts: "500+", signal_types: "40+" },
-    color: "blue",
   },
   {
     id: "enrichment-engine",
@@ -42,7 +39,6 @@ const agents = [
       "Revenue estimate modeling from signals",
     ],
     metrics: { fields: "200+", accuracy: "97%", speed: "< 2 min/account" },
-    color: "cyan",
   },
   {
     id: "sequence-writer",
@@ -60,7 +56,6 @@ const agents = [
       "Reply-rate optimization through continuous learning",
     ],
     metrics: { avg_reply_rate: "4.2x industry avg", variants: "Unlimited", channels: "4" },
-    color: "purple",
   },
   {
     id: "pipeline-monitor",
@@ -78,7 +73,6 @@ const agents = [
       "Deal health scoring with predictive risk flags",
     ],
     metrics: { signals_monitored: "180+", avg_alert_time: "< 4 hours", pipeline_recovery: "18%" },
-    color: "amber",
   },
   {
     id: "health-mapper",
@@ -96,38 +90,26 @@ const agents = [
       "Clinical committee membership identification",
     ],
     metrics: { providers: "1.2M+", update_freq: "Daily", accuracy: "97%" },
-    color: "green",
   },
-];
-
-const colorConfig = {
-  blue: { badge: "blue" as const, bg: "bg-accent-blue/10", border: "border-accent-blue/20", text: "text-blue-300", dot: "bg-accent-blue" },
-  cyan: { badge: "default" as const, bg: "bg-cyan-500/10", border: "border-cyan-500/20", text: "text-cyan-300", dot: "bg-cyan-400" },
-  purple: { badge: "purple" as const, bg: "bg-purple-500/10", border: "border-purple-500/20", text: "text-purple-300", dot: "bg-purple-400" },
-  amber: { badge: "amber" as const, bg: "bg-amber-500/10", border: "border-amber-500/20", text: "text-amber-300", dot: "bg-amber-400" },
-  green: { badge: "green" as const, bg: "bg-emerald-500/10", border: "border-emerald-500/20", text: "text-emerald-300", dot: "bg-emerald-400" },
-};
+]
 
 export function AgentsPageContent() {
-  const [selectedAgent, setSelectedAgent] = useState<string | null>(null);
-  const active = agents.find((a) => a.id === selectedAgent);
-  const colors = active ? colorConfig[active.color as keyof typeof colorConfig] : null;
+  const [selectedAgent, setSelectedAgent] = useState<string | null>(null)
+  const active = agents.find((a) => a.id === selectedAgent)
 
   return (
     <>
       {/* Hero */}
-      <section className="relative pt-32 pb-20 bg-navy-950 overflow-hidden">
-        <div className="absolute inset-0 bg-grid opacity-50" />
-        <div className="absolute top-0 left-1/3 w-[700px] h-[400px] bg-accent-blue/6 blur-[120px] rounded-full" />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="pt-32 pb-20 bg-white">
+        <div className="max-w-6xl mx-auto px-6 lg:px-10 text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            <SectionLabel className="justify-center">AI Agents & Engines</SectionLabel>
-            <h1 className="text-display-xl font-bold text-white mb-6">
+            <p className="text-sm font-semibold text-blue-600 tracking-widest uppercase mb-3">AI Agents & Engines</p>
+            <h1 className="text-display font-bold text-navy tracking-[-0.025em] mb-6">
               Purpose-built for GTM.
               <br />
               <span className="gradient-text">Running while you sleep.</span>
             </h1>
-            <p className="text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-lead text-muted max-w-2xl mx-auto leading-relaxed">
               Each BMA agent is trained on our proprietary GTM playbooks and deployed
               to run autonomously within your revenue stack. Real work. Real results.
             </p>
@@ -136,62 +118,63 @@ export function AgentsPageContent() {
       </section>
 
       {/* Agent Gallery */}
-      <section className="py-16 bg-navy-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-center text-slate-500 text-sm mb-8">Click any agent to expand details</p>
+      <section className="py-16 bg-off-white section-divider">
+        <div className="max-w-6xl mx-auto px-6 lg:px-10">
+          <p className="text-center text-muted text-sm mb-8">Click any agent to expand details</p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {agents.map((agent, i) => {
-              const c = colorConfig[agent.color as keyof typeof colorConfig];
-              return (
-                <motion.button
-                  key={agent.id}
-                  onClick={() => setSelectedAgent(selectedAgent === agent.id ? null : agent.id)}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.08 }}
-                  className={`text-left p-7 rounded-xl bg-surface-card border transition-all duration-300 ${
-                    selectedAgent === agent.id
-                      ? `border-white/25 bg-white/[0.04]`
-                      : "border-white/[0.08] hover:border-white/[0.15]"
-                  }`}
-                >
-                  <div className="flex items-center justify-between mb-4">
-                    <Badge variant={c.badge}>{agent.category}</Badge>
-                    <span className={`text-xs font-medium ${agent.status === "Production" ? "text-emerald-400" : "text-cyan-400"}`}>
-                      {agent.status}
-                    </span>
-                  </div>
-                  <h3 className="text-white font-bold text-xl mb-1">{agent.name}</h3>
-                  <p className={`text-sm font-medium ${c.text} mb-3`}>{agent.tagline}</p>
-                  <p className="text-slate-400 text-sm leading-relaxed line-clamp-2">{agent.description}</p>
-                </motion.button>
-              );
-            })}
+            {agents.map((agent, i) => (
+              <motion.button
+                key={agent.id}
+                onClick={() => setSelectedAgent(selectedAgent === agent.id ? null : agent.id)}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.08 }}
+                className={`text-left p-7 rounded-xl bg-white border transition-shadow duration-300 ${
+                  selectedAgent === agent.id
+                    ? "border-blue-300 shadow-card-hover"
+                    : "border-gray-200 hover:shadow-card-hover"
+                }`}
+              >
+                <div className="flex items-center justify-between mb-4">
+                  <span className="text-[12px] font-medium text-blue-700 bg-blue-pale border border-blue-mid px-2.5 py-1 rounded-full">
+                    {agent.category}
+                  </span>
+                  <span className={`text-xs font-medium ${agent.status === "Production" ? "text-emerald-600" : "text-blue-600"}`}>
+                    {agent.status}
+                  </span>
+                </div>
+                <h3 className="text-navy font-bold text-xl mb-1">{agent.name}</h3>
+                <p className="text-sm font-medium text-blue-600 mb-3">{agent.tagline}</p>
+                <p className="text-muted text-sm leading-relaxed line-clamp-2">{agent.description}</p>
+              </motion.button>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Modal / Detail panel */}
+      {/* Detail panel */}
       <AnimatePresence>
-        {active && colors && (
+        {active && (
           <motion.section
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 20 }}
-            className="py-8 bg-navy-950"
+            className="py-8 bg-white section-divider"
           >
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className={`rounded-2xl border ${colors.border} ${colors.bg.replace("10", "5")} p-10`}>
+            <div className="max-w-6xl mx-auto px-6 lg:px-10">
+              <div className="rounded-2xl border border-blue-mid bg-blue-pale p-10">
                 <div className="flex items-start justify-between mb-8">
                   <div>
-                    <Badge variant={colors.badge} className="mb-3">{active.category}</Badge>
-                    <h2 className="text-3xl font-bold text-white mb-1">{active.name}</h2>
-                    <p className={`text-lg font-medium ${colors.text}`}>{active.tagline}</p>
+                    <span className="text-[12px] font-medium text-blue-700 bg-white border border-blue-mid px-2.5 py-1 rounded-full mb-3 inline-block">
+                      {active.category}
+                    </span>
+                    <h2 className="text-title font-bold text-navy mb-1">{active.name}</h2>
+                    <p className="text-[15px] font-medium text-blue-600">{active.tagline}</p>
                   </div>
                   <button
                     onClick={() => setSelectedAgent(null)}
-                    className="text-slate-500 hover:text-white transition-colors p-2"
+                    className="text-muted hover:text-ink transition-colors p-2"
                   >
                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -201,31 +184,31 @@ export function AgentsPageContent() {
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
                   <div>
-                    <p className="text-slate-300 text-base leading-relaxed mb-6">{active.description}</p>
-                    <h4 className="text-white font-semibold text-sm uppercase tracking-wider mb-4">Capabilities</h4>
+                    <p className="text-ink text-base leading-relaxed mb-6">{active.description}</p>
+                    <h4 className="text-navy font-semibold text-sm uppercase tracking-wider mb-4">Capabilities</h4>
                     <ul className="space-y-3">
                       {active.capabilities.map((cap) => (
-                        <li key={cap} className="flex items-start gap-3 text-sm text-slate-300">
-                          <div className={`w-1.5 h-1.5 rounded-full ${colors.dot} mt-1.5 flex-shrink-0`} />
+                        <li key={cap} className="flex items-start gap-3 text-sm text-muted">
+                          <div className="w-1.5 h-1.5 rounded-full bg-blue-600 mt-1.5 flex-shrink-0" />
                           {cap}
                         </li>
                       ))}
                     </ul>
                   </div>
                   <div>
-                    <h4 className="text-white font-semibold text-sm uppercase tracking-wider mb-4">Performance Metrics</h4>
+                    <h4 className="text-navy font-semibold text-sm uppercase tracking-wider mb-4">Performance Metrics</h4>
                     <div className="grid grid-cols-1 gap-4">
                       {Object.entries(active.metrics).map(([key, value]) => (
-                        <div key={key} className="flex items-center justify-between p-4 rounded-xl bg-white/[0.03] border border-white/[0.06]">
-                          <span className="text-slate-400 text-sm capitalize">{key.replace(/_/g, " ")}</span>
-                          <span className={`font-bold ${colors.text}`}>{value}</span>
+                        <div key={key} className="flex items-center justify-between p-4 rounded-xl bg-white border border-blue-mid">
+                          <span className="text-muted text-sm capitalize">{key.replace(/_/g, " ")}</span>
+                          <span className="font-bold text-navy text-sm">{value}</span>
                         </div>
                       ))}
                     </div>
                     <div className="mt-6">
                       <Link
                         href="/contact"
-                        className="block text-center w-full px-6 py-3 bg-accent-blue hover:bg-accent-blue-light text-white font-semibold rounded-lg transition-all text-sm"
+                        className="block text-center w-full px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition-colors text-sm"
                       >
                         Deploy {active.name}
                       </Link>
@@ -240,5 +223,5 @@ export function AgentsPageContent() {
 
       <CTASection />
     </>
-  );
+  )
 }

@@ -1,8 +1,8 @@
-"use client";
+"use client"
 
-import { motion } from "framer-motion";
-import Link from "next/link";
-import { CTASection } from "@/components/sections/CTASection";
+import { motion } from "framer-motion"
+import Link from "next/link"
+import { CTASection } from "@/components/sections/CTASection"
 
 const founders = [
   {
@@ -12,7 +12,6 @@ const founders = [
     bio: "Sagar built and scaled outbound engines at top B2B companies from Series A through pre-IPO. Led GTM strategy at Clay and McKinsey & Company. At BMA, he leads GTM architecture for enterprise and PE clients and is the architect of the BMA enrichment methodology and structured playbook framework.",
     specialties: ["Outbound sequence design", "ICP definition frameworks", "Multi-stakeholder selling", "Clay workflow architecture"],
     initial: "S",
-    color: "from-blue-600 to-blue-800",
   },
   {
     name: "Kevin Cong",
@@ -21,7 +20,6 @@ const founders = [
     bio: "Kevin is a specialist in multi-channel outbound strategy and Clay-powered campaign architecture. He drives campaign activation, A/B testing frameworks, and steady-state experimentation for BMA clients across enterprise and growth-stage companies.",
     specialties: ["Multi-channel campaign design", "Clay-powered activation", "Sequence copywriting", "Conversion optimization"],
     initial: "K",
-    color: "from-blue-700 to-navy-800",
   },
   {
     name: "Karthik Devarakonda",
@@ -30,9 +28,8 @@ const founders = [
     bio: "Karthik built the data infrastructure that powers BMA's autonomous prospecting engines. Previously led data engineering teams through 10x growth phases with hands-on experience across every major enrichment tool and API in the GTM stack.",
     specialties: ["API integration & data fusion", "CRM data modeling", "Enrichment tool evaluation", "Autonomous agent deployment"],
     initial: "K",
-    color: "from-navy-700 to-navy-900",
   },
-];
+]
 
 const values = [
   {
@@ -55,37 +52,27 @@ const values = [
     title: "Owned outcomes",
     description: "We structure our engagements around measurable outcomes. If the pipeline isn't growing, we're not doing our job.",
   },
-];
+]
 
 export function AboutPageContent() {
   return (
     <>
       {/* Hero */}
-      <section className="relative pt-36 pb-24 bg-white overflow-hidden">
-        <div className="absolute inset-0 bg-light-grid bg-grid-md opacity-100" />
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background: "radial-gradient(ellipse 60% 50% at 70% 30%, rgba(29,78,216,0.05), transparent)",
-          }}
-        />
-        <div className="relative max-w-content mx-auto px-6 lg:px-8">
+      <section className="pt-36 pb-24 bg-white">
+        <div className="max-w-6xl mx-auto px-6 lg:px-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="max-w-3xl"
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 mb-6">
-              <div className="w-1.5 h-1.5 rounded-full bg-blue-700" />
-              <span className="text-blue-700 text-xs font-semibold uppercase tracking-widest">Our Story</span>
-            </div>
-            <h1 className="font-display text-display-xl font-extrabold text-navy-900 tracking-tight mb-6">
+            <p className="text-sm font-semibold text-blue-600 tracking-widest uppercase mb-3">Our Story</p>
+            <h1 className="text-display font-bold text-navy tracking-[-0.025em] mb-6">
               Built by operators.
               <br />
-              <span className="gradient-text-blue">Deployed for scale.</span>
+              <span className="gradient-text">Deployed for scale.</span>
             </h1>
-            <p className="text-xl text-gray-500 leading-relaxed max-w-2xl">
+            <p className="text-lead text-muted leading-relaxed max-w-2xl">
               Blue Modern Advisory is a GTM Strategy &amp; Engineering firm that transforms how
               companies leverage data and large language models to convert ideal prospects and
               drive revenue growth. Led by GTM Experts from Clay and McKinsey &amp; Company.
@@ -95,19 +82,19 @@ export function AboutPageContent() {
       </section>
 
       {/* Story */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-content mx-auto px-6 lg:px-8">
+      <section className="py-20 bg-off-white section-divider">
+        <div className="max-w-6xl mx-auto px-6 lg:px-10">
           <div className="max-w-3xl">
-            <p className="text-gray-600 text-lg leading-relaxed mb-6">
+            <p className="text-muted text-[17px] leading-relaxed mb-6">
               We are Blue Modern Advisory, a GTM Strategy &amp; Engineering firm that transforms
               how companies leverage data and large language models to convert ideal prospects and
               drive revenue growth.
             </p>
-            <p className="text-gray-600 text-lg leading-relaxed mb-6">
+            <p className="text-muted text-[17px] leading-relaxed mb-6">
               We build autonomous prospecting engines that streamline list building, data enrichment,
               and sequencing workflows to intelligently scale enterprise revenue operations.
             </p>
-            <p className="text-gray-600 text-lg leading-relaxed">
+            <p className="text-muted text-[17px] leading-relaxed">
               Today BMA serves enterprise B2B companies, PE firms, healthcare tech companies, and
               vertical SaaS platforms. Our work spans list building and enrichment through full GTM
               architecture and agent deployment. The Togari platform extends our healthcare
@@ -118,14 +105,11 @@ export function AboutPageContent() {
       </section>
 
       {/* Team */}
-      <section className="py-24 bg-white">
-        <div className="max-w-content mx-auto px-6 lg:px-8">
+      <section className="py-24 bg-white section-divider">
+        <div className="max-w-6xl mx-auto px-6 lg:px-10">
           <div className="mb-14">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 mb-5">
-              <div className="w-1.5 h-1.5 rounded-full bg-blue-700" />
-              <span className="text-blue-700 text-xs font-semibold uppercase tracking-widest">The Team</span>
-            </div>
-            <h2 className="font-display text-display-md font-extrabold text-navy-900 tracking-tight">
+            <p className="text-sm font-semibold text-blue-600 tracking-widest uppercase mb-3">The Team</p>
+            <h2 className="text-display font-bold text-navy tracking-[-0.025em]">
               The founders
             </h2>
           </div>
@@ -137,22 +121,22 @@ export function AboutPageContent() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="p-8 rounded-2xl bg-white border border-gray-200 shadow-card hover:shadow-card-hover transition-all duration-200"
+                className="p-8 rounded-2xl bg-white border border-gray-200 hover:shadow-card-hover transition-shadow duration-300"
               >
-                <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${founder.color} flex items-center justify-center mb-6`}>
+                <div className="w-14 h-14 rounded-2xl bg-navy flex items-center justify-center mb-6">
                   <span className="text-white font-bold text-2xl">{founder.initial}</span>
                 </div>
                 <div className="mb-1">
-                  <span className="font-display font-bold text-navy-900 text-xl">{founder.name}</span>
+                  <span className="font-bold text-navy text-xl">{founder.name}</span>
                 </div>
-                <div className="text-blue-700 text-sm font-semibold mb-0.5">{founder.role}</div>
-                <div className="text-gray-400 text-xs mb-5">{founder.focus}</div>
-                <p className="text-gray-500 text-sm leading-relaxed mb-6">{founder.bio}</p>
-                <h4 className="text-navy-900 text-xs font-semibold uppercase tracking-wider mb-3">Specialties</h4>
+                <div className="text-blue-600 text-sm font-semibold mb-0.5">{founder.role}</div>
+                <div className="text-muted text-xs mb-5">{founder.focus}</div>
+                <p className="text-muted text-sm leading-relaxed mb-6">{founder.bio}</p>
+                <h4 className="text-navy text-xs font-semibold uppercase tracking-wider mb-3">Specialties</h4>
                 <ul className="space-y-2">
                   {founder.specialties.map((s) => (
-                    <li key={s} className="flex items-center gap-2 text-sm text-gray-600">
-                      <div className="w-1.5 h-1.5 rounded-full bg-blue-700 flex-shrink-0" />
+                    <li key={s} className="flex items-center gap-2 text-sm text-muted">
+                      <div className="w-1.5 h-1.5 rounded-full bg-blue-600 flex-shrink-0" />
                       {s}
                     </li>
                   ))}
@@ -164,14 +148,11 @@ export function AboutPageContent() {
       </section>
 
       {/* Values */}
-      <section className="py-24 bg-gray-50">
-        <div className="max-w-content mx-auto px-6 lg:px-8">
+      <section className="py-24 bg-off-white section-divider">
+        <div className="max-w-6xl mx-auto px-6 lg:px-10">
           <div className="mb-14">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 mb-5">
-              <div className="w-1.5 h-1.5 rounded-full bg-blue-700" />
-              <span className="text-blue-700 text-xs font-semibold uppercase tracking-widest">How We Work</span>
-            </div>
-            <h2 className="font-display text-display-md font-extrabold text-navy-900 tracking-tight">
+            <p className="text-sm font-semibold text-blue-600 tracking-widest uppercase mb-3">How We Work</p>
+            <h2 className="text-display font-bold text-navy tracking-[-0.025em]">
               Our operating principles
             </h2>
           </div>
@@ -183,14 +164,14 @@ export function AboutPageContent() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="flex gap-5 p-7 rounded-xl bg-white border border-gray-200 shadow-card"
+                className="flex gap-5 p-7 rounded-xl bg-white border border-gray-200 hover:shadow-card-hover transition-shadow duration-300"
               >
-                <div className="w-9 h-9 rounded-lg bg-blue-50 border border-blue-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <div className="w-9 h-9 rounded-lg bg-blue-pale border border-blue-mid flex items-center justify-center flex-shrink-0 mt-0.5">
                   <span className="text-blue-700 text-xs font-bold">{v.number}</span>
                 </div>
                 <div>
-                  <h3 className="font-display font-bold text-navy-900 text-base mb-2">{v.title}</h3>
-                  <p className="text-gray-500 text-sm leading-relaxed">{v.description}</p>
+                  <h3 className="font-bold text-navy text-base mb-2">{v.title}</h3>
+                  <p className="text-muted text-sm leading-relaxed">{v.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -200,5 +181,5 @@ export function AboutPageContent() {
 
       <CTASection />
     </>
-  );
+  )
 }

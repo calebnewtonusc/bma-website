@@ -1,10 +1,8 @@
-"use client";
+"use client"
 
-import { motion } from "framer-motion";
-import Link from "next/link";
-import { SectionLabel } from "@/components/ui/SectionLabel";
-import { Badge } from "@/components/ui/Badge";
-import { CTASection } from "@/components/sections/CTASection";
+import { motion } from "framer-motion"
+import Link from "next/link"
+import { CTASection } from "@/components/sections/CTASection"
 
 const programs = [
   {
@@ -13,7 +11,6 @@ const programs = [
     duration: "8 weeks",
     level: "Seed to Series A",
     format: "Weekly 1:1 + async",
-    price: "Custom",
     description:
       "Designed for technical founders who built something great but need a repeatable outbound engine before their first sales hire. By the end, you have a working ICP, a tested sequence library, and 20 qualified conversations on the calendar.",
     modules: [
@@ -25,7 +22,6 @@ const programs = [
       "Metrics framework and what to optimize first",
       "Hiring brief for your first SDR/AE",
     ],
-    badge: "blue" as const,
     highlighted: true,
   },
   {
@@ -34,7 +30,6 @@ const programs = [
     duration: "4 weeks",
     level: "Series B+",
     format: "Daily check-ins",
-    price: "Custom",
     description:
       "For VPs of Sales and CROs who've inherited or are rebuilding a GTM motion. Rapid audit, root cause analysis, and a full rebuild plan delivered alongside your team in real-time.",
     modules: [
@@ -46,7 +41,6 @@ const programs = [
       "CRM hygiene and data model review",
       "90-day acceleration roadmap",
     ],
-    badge: "default" as const,
     highlighted: false,
   },
   {
@@ -55,7 +49,6 @@ const programs = [
     duration: "6 weeks",
     level: "All stages",
     format: "Workshop-based",
-    price: "Custom",
     description:
       "Hands-on technical training for RevOps professionals. Master enrichment workflows, CRM architecture, AI tool integration, and the measurement frameworks that mature revenue teams rely on.",
     modules: [
@@ -67,10 +60,9 @@ const programs = [
       "Reporting dashboards for sales leadership",
       "AI agent evaluation and deployment",
     ],
-    badge: "purple" as const,
     highlighted: false,
   },
-];
+]
 
 const testimonials = [
   {
@@ -88,24 +80,22 @@ const testimonials = [
     author: "Head of RevOps",
     company: "Growth-stage Healthcare Tech",
   },
-];
+]
 
 export function CoachingPageContent() {
   return (
     <>
       {/* Hero */}
-      <section className="relative pt-32 pb-20 bg-navy-950 overflow-hidden">
-        <div className="absolute inset-0 bg-grid opacity-50" />
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-accent-blue/5 blur-[80px] rounded-full" />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="pt-32 pb-20 bg-white">
+        <div className="max-w-6xl mx-auto px-6 lg:px-10 text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            <SectionLabel className="justify-center">Coaching & Education</SectionLabel>
-            <h1 className="text-display-xl font-bold text-white mb-6">
+            <p className="text-sm font-semibold text-blue-600 tracking-widest uppercase mb-3">Coaching & Education</p>
+            <h1 className="text-display font-bold text-navy tracking-[-0.025em] mb-6">
               We build GTM capability,
               <br />
               <span className="gradient-text">not just campaigns.</span>
             </h1>
-            <p className="text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-lead text-muted max-w-2xl mx-auto leading-relaxed">
               Structured programs that transfer real institutional knowledge from
               BMA practitioners to your team. Not slides. Not theory. The actual playbooks.
             </p>
@@ -114,8 +104,8 @@ export function CoachingPageContent() {
       </section>
 
       {/* Programs */}
-      <section className="py-20 bg-navy-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-24 bg-off-white section-divider">
+        <div className="max-w-6xl mx-auto px-6 lg:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {programs.map((program, i) => (
               <motion.div
@@ -126,32 +116,34 @@ export function CoachingPageContent() {
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 className={`relative p-8 rounded-2xl border ${
                   program.highlighted
-                    ? "bg-accent-blue/5 border-accent-blue/25"
-                    : "bg-surface-card border-white/[0.08]"
-                }`}
+                    ? "bg-blue-pale border-blue-mid"
+                    : "bg-white border-gray-200"
+                } hover:shadow-card-hover transition-shadow duration-300`}
               >
                 {program.highlighted && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-accent-blue rounded-full text-xs font-semibold text-white">
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-blue-600 rounded-full text-xs font-semibold text-white">
                     Most Popular
                   </div>
                 )}
-                <Badge variant={program.badge} className="mb-4">{program.level}</Badge>
-                <h3 className="text-white font-bold text-xl mb-1">{program.name}</h3>
-                <p className="text-accent-blue-light text-sm font-medium mb-2">{program.tagline}</p>
+                <span className="text-[12px] font-medium text-blue-700 bg-white border border-blue-mid px-2.5 py-1 rounded-full mb-4 inline-block">
+                  {program.level}
+                </span>
+                <h3 className="text-navy font-bold text-xl mb-1">{program.name}</h3>
+                <p className="text-blue-600 text-sm font-medium mb-2">{program.tagline}</p>
 
-                <div className="flex gap-4 mb-5 text-sm text-slate-400">
+                <div className="flex gap-4 mb-5 text-sm text-muted">
                   <span>{program.duration}</span>
                   <span>·</span>
                   <span>{program.format}</span>
                 </div>
 
-                <p className="text-slate-400 text-sm leading-relaxed mb-6">{program.description}</p>
+                <p className="text-muted text-sm leading-relaxed mb-6">{program.description}</p>
 
-                <h4 className="text-white text-xs font-semibold uppercase tracking-wider mb-3">Curriculum</h4>
+                <h4 className="text-navy text-xs font-semibold uppercase tracking-wider mb-3">Curriculum</h4>
                 <ul className="space-y-2 mb-8">
                   {program.modules.map((m) => (
-                    <li key={m} className="flex items-start gap-2.5 text-sm text-slate-300">
-                      <div className="w-1.5 h-1.5 rounded-full bg-accent-blue mt-1.5 flex-shrink-0" />
+                    <li key={m} className="flex items-start gap-2.5 text-sm text-muted">
+                      <div className="w-1.5 h-1.5 rounded-full bg-blue-600 mt-1.5 flex-shrink-0" />
                       {m}
                     </li>
                   ))}
@@ -159,10 +151,10 @@ export function CoachingPageContent() {
 
                 <Link
                   href={`/contact?program=${encodeURIComponent(program.name)}`}
-                  className={`block text-center w-full px-6 py-3 font-semibold rounded-lg transition-all text-sm ${
+                  className={`block text-center w-full px-6 py-3 font-semibold rounded-xl transition-colors text-sm ${
                     program.highlighted
-                      ? "bg-accent-blue hover:bg-accent-blue-light text-white"
-                      : "bg-white/[0.06] hover:bg-white/[0.1] text-white border border-white/[0.1]"
+                      ? "bg-blue-600 hover:bg-blue-700 text-white"
+                      : "bg-navy hover:bg-ink text-white"
                   }`}
                 >
                   Apply for {program.name}
@@ -174,10 +166,11 @@ export function CoachingPageContent() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-20 bg-navy-950">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-24 bg-white section-divider">
+        <div className="max-w-6xl mx-auto px-6 lg:px-10">
           <div className="text-center mb-12">
-            <h2 className="text-display-md font-bold text-white">What alumni say</h2>
+            <p className="text-sm font-semibold text-blue-600 tracking-widest uppercase mb-3">Alumni Results</p>
+            <h2 className="text-display font-bold text-navy tracking-[-0.025em]">What alumni say</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((t, i) => (
@@ -187,15 +180,12 @@ export function CoachingPageContent() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="p-7 rounded-xl bg-surface-card card-border"
+                className="p-7 rounded-xl bg-white border border-gray-200 hover:shadow-card-hover transition-shadow duration-300"
               >
-                <svg className="w-8 h-8 text-accent-blue/40 mb-4" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                </svg>
-                <p className="text-slate-300 text-sm leading-relaxed mb-5 italic">{t.quote}</p>
+                <p className="text-ink text-sm leading-relaxed mb-5 italic">&ldquo;{t.quote}&rdquo;</p>
                 <div>
-                  <div className="text-white font-semibold text-sm">{t.author}</div>
-                  <div className="text-slate-500 text-xs">{t.company}</div>
+                  <div className="text-navy font-semibold text-sm">{t.author}</div>
+                  <div className="text-muted text-xs">{t.company}</div>
                 </div>
               </motion.div>
             ))}
@@ -205,5 +195,5 @@ export function CoachingPageContent() {
 
       <CTASection />
     </>
-  );
+  )
 }

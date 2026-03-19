@@ -1,111 +1,57 @@
-"use client";
-
-import { motion } from "framer-motion";
+"use client"
+import { motion } from "framer-motion"
 
 const steps = [
   {
-    number: "01",
+    n: "01",
     title: "Data Diagnostic",
-    description:
-      "BMA conducts an initial data diagnostic of your data architecture, AI systems, and operating model. We synthesize findings into a structured GTM playbook and operational toolkit.",
-    highlights: [
-      "Data architecture review",
-      "AI systems assessment",
-      "Operating model analysis",
-      "Structured GTM playbook",
-    ],
+    body: "We audit your data architecture, AI systems, and operating model. Every engagement starts here — we build nothing until we understand exactly where you are and where you need to go.",
   },
   {
-    number: "02",
+    n: "02",
     title: "System Design & Deployment",
-    description:
-      "BMA designs and deploys a scalable system for AI-powered prospecting: automated CRM ingestion, lead generation to opportunity, data enrichment workflows, real-time lead detection, and routing into CRM with ownership, tagging, and deduplication.",
-    highlights: [
-      "CRM ingestion automation",
-      "Data enrichment workflows",
-      "Real-time lead detection",
-      "Ownership & dedup routing",
-    ],
+    body: "We design and deploy your AI-powered prospecting infrastructure: CRM ingestion, enrichment workflows, lead routing, deduplication. Clay-native, built to run without you.",
   },
   {
-    number: "03",
+    n: "03",
     title: "Campaign Activation",
-    description:
-      "BMA activates inbound and outbound campaigns across every pipeline stage using Clay-powered infrastructure, a structured playbook, and steady-state experimentation. High-volume outreach without sacrificing targeting precision.",
-    highlights: [
-      "Clay-powered infrastructure",
-      "Inbound & outbound activation",
-      "Steady-state experimentation",
-      "Precision at volume",
-    ],
+    body: "We activate inbound and outbound across every channel using Clay-powered infrastructure. High-volume outreach, precision targeting. Steady-state experimentation until the numbers move.",
   },
-];
+]
 
 export function ProcessSection() {
   return (
-    <section className="py-28 bg-white">
-      <div className="max-w-content mx-auto px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 mb-5">
-            <div className="w-1.5 h-1.5 rounded-full bg-blue-700" />
-            <span className="text-blue-700 text-xs font-semibold uppercase tracking-widest">
-              The BMA Process
-            </span>
-          </div>
-          <h2 className="font-display text-display-md font-extrabold text-navy-900 tracking-tight mb-4 text-balance">
-            How we build your revenue engine
-          </h2>
-          <p className="text-gray-500 text-lg max-w-2xl mx-auto leading-relaxed">
-            Three structured phases from diagnostic to activation.
-            Every engagement is built on this foundation.
-          </p>
-        </div>
+    <section className="py-24 bg-white section-divider">
+      <div className="max-w-6xl mx-auto px-6 lg:px-10">
+        <p className="text-sm font-semibold text-blue-600 tracking-widest uppercase mb-3">How We Work</p>
+        <h2 className="text-display font-bold text-navy tracking-[-0.025em] mb-20 max-w-prose">
+          Three phases. One working system.
+        </h2>
 
-        {/* Timeline steps */}
-        <div className="divide-y divide-gray-100">
-          {steps.map((step, i) => (
+        <div className="space-y-0">
+          {steps.map((s, i) => (
             <motion.div
-              key={step.number}
-              initial={{ opacity: 0, y: 24 }}
+              key={s.n}
+              initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.55, delay: i * 0.12 }}
-              className="grid grid-cols-1 lg:grid-cols-12 gap-8 py-16"
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.4, delay: i * 0.08 }}
+              className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10 py-10 border-t border-gray-200"
             >
-              {/* Large display number */}
-              <div className="lg:col-span-2 flex items-start">
-                <span className="text-[6rem] font-extrabold text-gray-100 leading-none font-display select-none">
-                  {step.number}
-                </span>
+              <div className="md:col-span-1">
+                <span className="font-mono text-[13px] text-muted">{s.n}</span>
               </div>
-
-              {/* Title */}
-              <div className="lg:col-span-3 flex flex-col justify-center">
-                <h3 className="font-display font-bold text-navy-900 text-2xl tracking-tight mb-2">
-                  {step.title}
-                </h3>
-                <div className="w-8 h-0.5 bg-blue-700 rounded" />
+              <div className="md:col-span-4">
+                <h3 className="font-bold text-title text-navy tracking-tight">{s.title}</h3>
               </div>
-
-              {/* Description + highlights */}
-              <div className="lg:col-span-7">
-                <p className="text-gray-500 leading-relaxed mb-6">{step.description}</p>
-                <div className="flex flex-wrap gap-2">
-                  {step.highlights.map((h) => (
-                    <span
-                      key={h}
-                      className="px-3 py-1.5 bg-blue-50 border border-blue-100 text-blue-700 text-xs font-medium rounded-full"
-                    >
-                      {h}
-                    </span>
-                  ))}
-                </div>
+              <div className="md:col-span-7">
+                <p className="text-lead text-muted leading-relaxed">{s.body}</p>
               </div>
             </motion.div>
           ))}
+          <div className="border-t border-gray-200" />
         </div>
       </div>
     </section>
-  );
+  )
 }
